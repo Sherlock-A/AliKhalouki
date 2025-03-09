@@ -10,11 +10,11 @@ import './index.scss'
 import styles from './index.scss'
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState('')
 
-  const nameArray = 'udip'.split('')
-  const jobArray = 'Software Engineer'.split('')
-  const interestArray = 'FullStack | DevOps | Web3'.split('')
+  const nameArray = 'oftware EngineerAli Khalouki'.split('')
+  const jobArray = 'FullStack | DevOps'.split('')
+  const interestArray = 'Business Analytics      Ux Designer'.split('')
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
-        <div className="text-zone">
+        <div className="text-zone" style={{ textAlign: 'center' }}>
           <h1>
             <span className={letterClass}>H</span>
             <span className={`${letterClass} _12`}>i,</span>
@@ -53,12 +53,13 @@ const Home = () => {
             />
           </h1>
           <h2>
-            Streamlining Workflows | Deploying Intelligent Systems | Building
-            Scalable Applications
+            FullStack | DevOps | Business Analytics | Ux Designer
           </h2>
-          <Link to="/contact" className="flat-button">
-            CONTACT ME
-          </Link>
+          <button className="centered-link" style={{ backgroundColor: 'green' }}>
+            <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>
+              CONTACT ME
+            </Link>
+          </button>
         </div>
         <Logo />
       </div>

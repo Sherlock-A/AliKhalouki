@@ -26,7 +26,7 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault()
     setLoading(true)
-
+  
     const email = form.current.email.value
     const res = await verifyEmail(email)
     if (!res) {
@@ -43,29 +43,30 @@ const Contact = () => {
       })
       return
     }
-
+  
     let fullName = form.current.name.value
     let subject = form.current.subject.value
     let message = form.current.message.value
-
+  
     let firstName = fullName.split(' ')[0]
     firstName =
       firstName.charAt(0).toUpperCase() + firstName.slice(1).toLowerCase()
-
+  
     const templateParams = {
       firstname: firstName,
       name: fullName,
       subject: subject,
       message: message,
       email: email,
+      to_email: 'okhalouki46@gmail.com', // Email du destinataire
     }
-
+  
     emailjs
       .send(
-        process.env.REACT_APP_EMIAL_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        process.env.REACT_APP_EMIAL_SERVICE_ID,  // Service ID de votre compte EmailJS
+        process.env.REACT_APP_TEMPLATE_ID,       // ID du template utilisé
         templateParams,
-        process.env.REACT_APP_PUBLIC_KEY
+        process.env.REACT_APP_PUBLIC_KEY        // Clé publique de votre compte EmailJS
       )
       .then(
         () => {
@@ -83,7 +84,7 @@ const Contact = () => {
             form.current.reset()
             setLoading(false)
           }, 3800)
-
+  
           return () => clearTimeout(timeout)
         },
         () => {
@@ -101,6 +102,7 @@ const Contact = () => {
         }
       )
   }
+  
 
   const verifyEmail = async (email) => {
     let res = await fetch(
@@ -130,9 +132,7 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I’m open to new opportunities and collaborations! If you’re looking
-            for someone who can bring fresh ideas and deliver impactful results,
-            let’s get in touch!
+            Si vous recherchez quelqu’un capable d’apporter des idées novatrices et de produire des résultats percutants, n’hésitez pas à me contacter !
           </p>
 
           <div className="contact-form">
@@ -180,18 +180,20 @@ const Contact = () => {
         </div>
         <div className="map-wrap">
           <div className="info-map">
-            Sudip Banerjee
+            Ali Khalouki
             <br />
-            Kolkata, <br />
-            West Bengal, <br />
-            India
+            Fés, Maroc
+            <br />
+            Route Ain Chkef
+            <br />
+            0771747509
             <br />
           </div>
-          <MapContainer center={[22.56263, 88.36304]} zoom={13}>
+          <MapContainer center={[33.9985, -4.9761]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[22.56263, 88.36304]}>
+            <Marker position={[33.9985, -4.9761]}>
               <Popup>
-                Sudip lives here, come over for a cup of coffee :{')'}
+                Ali Khalouki réside ici et serait ravi de partager un moment convivial avec vous autour d'un café:{')'}
               </Popup>
             </Marker>
           </MapContainer>

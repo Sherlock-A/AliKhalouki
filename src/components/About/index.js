@@ -39,17 +39,11 @@ const About = () => {
             />
           </h1>
           <p>
-            I’m a DevOps and Full Stack Engineer with over 2 years of
-            experience, specializing in automating workflows, optimizing CI/CD
-            pipelines, and deploying intelligent systems. My expertise spans
-            across DevOps, full-stack, blockchain development, and aritificial
-            intelligence, with a strong foundation in security.
+          Développeur web full stack passionné, business analyst et UX designer basé à Fès. J'ai acquis une solide expérience en développement web au sein d'entreprises telles que Cadex à Casablanca et HighFarming à Fès. Mon expertise s'étend également à l'analyse des besoins métiers, à la conception d'expériences utilisateur intuitives et à la création d'interfaces ergonomiques. Polyvalent et curieux, je m'efforce de combiner mes compétences techniques et créatives pour concevoir des solutions web innovantes et centrées sur l'utilisateur.
           </p>
           <p>
-            I’m passionate about solving real-world problems through innovative
-            technology and continuously learning to stay ahead of industry
-            trends. Whether it's streamlining infrastructure or building
-            scalable applications, I bring a holistic approach to every project.
+         Je suis toujours à la recherche d'opportunités pour approfondir mes compétences et
+          contribuer à des projets ambitieux.
           </p>
         </div>
 

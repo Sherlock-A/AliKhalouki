@@ -31,17 +31,10 @@ const Skills = () => {
             <br />
           </h1>
           <p>
-            I have a strong foundation in both development and operations, with
-            a focus on creating seamless, efficient systems. My experience
-            includes automating deployment processes, designing scalable
-            applications, and working with cloud technologies to deliver
-            reliable solutions.
+            Je suis Ali Khalouki, un développeur full-stack, designer UX et analyste d'affaires. J'ai une solide base à la fois en développement et en opérations, avec un accent sur la création de systèmes fluides et efficaces. Mon expérience comprend l'automatisation des processus de déploiement, la conception d'applications évolutives et le travail avec les technologies cloud pour fournir des solutions fiables.
           </p>
           <p>
-            My skill set spans across DevOps, machine learning, full-stack
-            development, and cloud infrastructure. I’m committed to staying
-            updated with the latest advancements and continually refining my
-            expertise to tackle complex challenges effectively.
+            Mon ensemble de compétences couvre le DevOps, l'apprentissage automatique, le développement full-stack et l'infrastructure cloud. Je m'engage à rester à jour avec les dernières avancées et à affiner continuellement mon expertise pour relever efficacement les défis complexes.
           </p>
         </div>
 

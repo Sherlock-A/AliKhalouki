@@ -48,7 +48,7 @@ const Sidebar = () => {
         <ul>
           <li>
             <a
-              href="https://www.linkedin.com/in/banerjee-sudip/"
+              href="https://www.linkedin.com/in/ali-khalouki-114975253/"
               target="_blank"
               rel="noreferrer"
             >
@@ -57,7 +57,7 @@ const Sidebar = () => {
           </li>
           <li>
             <a
-              href="https://github.com/metal-oopa"
+              href="https://github.com/khaloukiali"
               target="_blank"
               rel="noreferrer"
             >
@@ -65,13 +65,7 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a
-              href="https://www.codechef.com/users/metal_oopa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={codechefLogo} width="24" alt="Codechef" />
-            </a>
+
           </li>
         </ul>
       </div>
