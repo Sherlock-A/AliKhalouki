@@ -199,7 +199,11 @@
     margin-top: 16px !important;
   }
 
-  .map-wrap { height: 280px !important; }
+  /* Carte desktop → cachée sur mobile */
+  .map-wrap { display: none !important; }
+
+  /* Carte mobile inline → visible sur mobile */
+  .map-mobile { display: block !important; }
 
   /* ── About — photo sous le texte ── */
   .photo-cont {

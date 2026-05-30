@@ -220,6 +220,23 @@
   }
 }
 
+/* Carte inline mobile — cachée sur desktop */
+.map-mobile {
+  display: none;
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    animation: none;
+  }
+}
+
 .map-wrap {
   position: relative;
   background: rgba(8, 253, 216, 0.1);

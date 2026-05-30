@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import TagCloud from 'TagCloud'
 
 const WordCloud = () => {
-  const [isLoading, setLoad] = useState(true)
+  const initialized = useRef(false)
 
   const container = '.content'
   const texts = [
@@ -59,10 +59,9 @@ const WordCloud = () => {
   }
 
   useEffect(() => {
-    if (isLoading) {
-      TagCloud(container, texts, options)
-      setLoad(false)
-    }
+    if (initialized.current) return
+    initialized.current = true
+    TagCloud(container, texts, options)
   }, [])
 
   return (
