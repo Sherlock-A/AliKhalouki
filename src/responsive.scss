@@ -164,22 +164,25 @@
   }
 
   /* Contact — override spécifique (annule les !important du contact/index.scss) */
-  .container.contact-page .text-zone {
+  html body .container.contact-page .text-zone {
     position: relative !important;
     left: 0 !important;
     top: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
     max-height: none !important;
     transform: none !important;
     display: block !important;
     overflow: visible !important;
     padding: 28px 0 0 !important;
+    box-sizing: border-box !important;
   }
 
   /* ── 5. Tous les wraps → pleine largeur, fin du float ── */
   .services-wrap,
   .certificates-wrap,
   .blog-wrap,
+  .projects-wrap,
   .tagcloud-wrap,
   .article-body,
   .map-wrap {
