@@ -194,25 +194,56 @@
     overflow: visible !important;
   }
 
-  /* Skills — cloud au-dessus du texte */
+  /* Skills — texte avant le nuage */
   .container.skills-page {
     display: flex !important;
     flex-direction: column !important;
   }
 
   .container.skills-page .text-zone {
-    order: 2 !important;
+    order: 1 !important;
     padding-top: 12px !important;
   }
 
   .tagcloud-wrap {
-    order: 1 !important;
+    order: 2 !important;
     height: 300px !important;
     overflow: hidden !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     margin-top: 8px !important;
+  }
+
+  /* ── Cacher les tags décoratifs h1 :before/:after ── */
+  .container .text-zone h1:before,
+  .container .text-zone h1:after {
+    display: none !important;
+  }
+
+  /* ── Home — logo dans l'espace vide en bas ── */
+  .logo-container {
+    display: flex !important;
+    position: absolute !important;
+    width: 180px !important;
+    height: 180px !important;
+    bottom: 68px !important;
+    top: auto !important;
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    animation: none !important;
+    opacity: 0.75 !important;
+  }
+
+  .logo-ring {
+    width: 148px !important;
+    height: 148px !important;
+  }
+
+  .logo-ring-outer {
+    width: 170px !important;
+    height: 170px !important;
   }
 
   /* Carte desktop → cachée sur mobile */
