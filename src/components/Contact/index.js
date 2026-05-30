@@ -212,16 +212,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Carte mobile — visible uniquement sur mobile, avant ENVOYER */}
-              <div className="map-mobile">
-                <MapContainer center={[33.9985, -4.9761]} zoom={12}>
-                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <Marker position={[33.9985, -4.9761]}>
-                    <Popup>{t('contact.popup')}</Popup>
-                  </Marker>
-                </MapContainer>
-              </div>
-
               {/* Submit */}
               <div className="form-submit">
                 <button type="submit" className="flat-button" disabled={loading}>
@@ -230,6 +220,16 @@ const Contact = () => {
                     : <><FontAwesomeIcon icon={faPaperPlane} /> {t('contact.send')}</>
                   }
                 </button>
+              </div>
+
+              {/* Carte mobile — visible uniquement sur mobile, après ENVOYER */}
+              <div className="map-mobile">
+                <MapContainer center={[33.9985, -4.9761]} zoom={12}>
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                  <Marker position={[33.9985, -4.9761]}>
+                    <Popup>{t('contact.popup')}</Popup>
+                  </Marker>
+                </MapContainer>
               </div>
 
               <ToastContainer />

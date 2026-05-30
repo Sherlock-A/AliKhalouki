@@ -205,6 +205,37 @@
   /* Carte mobile inline → visible sur mobile */
   .map-mobile { display: block !important; }
 
+  /* Formulaire contact — amélioration mobile */
+  .contact-form {
+    margin-top: 12px !important;
+
+    .form-group label {
+      font-size: 9px !important;
+      letter-spacing: 0.08em !important;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    select {
+      height: 46px !important;
+      font-size: 14px !important;
+    }
+
+    textarea { min-height: 100px !important; font-size: 14px !important; }
+
+    .form-submit {
+      margin-top: 12px !important;
+    }
+
+    .flat-button {
+      width: 100% !important;
+      padding: 13px 20px !important;
+      font-size: 12px !important;
+      letter-spacing: 3px !important;
+    }
+  }
+
   /* ── About — photo sous le texte ── */
   .photo-cont {
     position: relative !important;

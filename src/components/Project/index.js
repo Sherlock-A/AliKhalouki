@@ -33,7 +33,7 @@ const projects = [
     title: 'High Farming ERP',
     url: null,
     descKey: "Système ERP privé pour High Farming à Fès. Gestion des opérations agricoles : stocks, planification, RH et reporting.",
-    tags: ['Laravel', 'MySQL', 'PHP', 'UML'],
+    tags: ['Laravel', 'PHP', 'MySQL', 'Blade', 'Bootstrap', 'jQuery', 'REST API', 'Chart.js', 'UML', 'Merise'],
     badge: 'private',
   },
   {
