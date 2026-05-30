@@ -7,67 +7,62 @@ const WordCloud = () => {
 
   const container = '.content'
   const texts = [
-    'Python',
-    'Typescript',
-    'Golang',
-    'C++',
-    'SQL',
-    'Bash',
-    'React',
-    'NextJS',
-    'Firebase',
-    'Django',
-    'Flask',
-    'NodeJS',
-    'Express',
-    'GraphQL',
-    'FastAPI',
-    'MySQL',
-    'PostgreSQL',
-    'MongoDB',
-    'Redis',
-    'TensorFlow',
-    'Keras',
-    'PyTorch',
-    'Scikit-learn',
-    'OpenCV',
-    'Docker',
-    'Kubernetes',
-    'GCP',
-    'AWS',
-    'Terraform',
-    'Git',
-    'GitHub',
-    'Linux',
-    'Java',
-    'Flutter',
-    'Dart',
+    // Frontend
     'HTML5',
     'CSS3',
     'JS',
-    'C',
-    'Solidity',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Tailwind',
+    'Bootstrap',
+    'GSAP',
+    'Framer',
+    'Three.js',
+    // Backend
+    'Node.js',
+    'Express',
+    'PHP',
+    'Laravel',
+    'JWT',
+    'REST API',
+    // Database
+    'MongoDB',
+    'MySQL',
+    'SQL',
+    // Systems & Network
+    'Linux',
+    'WinServer',
+    'VMware',
+    'DNS',
+    'TCP/IP',
+    'Active Dir.',
+    // DevOps & Tools
+    'Docker',
+    'CI/CD',
+    'Git',
+    'GitHub',
+    'Postman',
+    'Figma',
+    // Analysis
+    'UML',
+    'Merise',
   ]
+
   const options = {
     radius: 300,
-    // animation speed
-    // slow, normal, fast
-    maxSpeed: 'fast',
-    initSpeed: 'fast',
-    // 0 = top
-    // 90 = left
-    // 135 = right-bottom
+    maxSpeed: 'normal',
+    initSpeed: 'normal',
     direction: 135,
-    // interact with cursor move on mouse out
     keep: true,
   }
-  //   to render wordcloud each time the page is reloaded
+
   useEffect(() => {
     if (isLoading) {
       TagCloud(container, texts, options)
       setLoad(false)
     }
-  })
+  }, [])
 
   return (
     <div className="main">

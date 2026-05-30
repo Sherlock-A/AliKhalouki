@@ -1,18 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="description" content="Ali Khalouki — Développeur Web Freelance au Maroc. Création de sites internet, SEO, applications web full-stack." />
+    <meta name="author" content="Ali Khalouki" />
+    <meta name="keywords" content="développeur web freelance maroc, création site web, full stack, react, laravel, fès" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://ali-khalouki.com/" />
+    <meta property="og:title"       content="Ali Khalouki — Développeur Web Freelance au Maroc" />
+    <meta property="og:description" content="Création de sites internet sur mesure, SEO, applications full-stack. Devis gratuit." />
+    <meta property="og:image"       content="https://ali-khalouki.com/ali-photo.png" />
+    <meta property="og:locale"      content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Ali Khalouki — Développeur Web Freelance au Maroc" />
+    <meta name="twitter:description" content="Création de sites internet sur mesure, SEO, applications full-stack. Devis gratuit." />
+    <meta name="twitter:image"       content="https://ali-khalouki.com/ali-photo.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ali-khalouki.com/" />
+
+    <!-- Extra OG -->
+    <meta property="og:site_name" content="Ali Khalouki" />
+    <meta name="twitter:creator" content="@ali_khalouki" />
+    <meta name="theme-color" content="#0E1116" />
+
+    <!-- JSON-LD — Person + LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Person", "LocalBusiness"],
+      "name": "Ali Khalouki",
+      "jobTitle": "Développeur Web Freelance",
+      "description": "Développeur Web Freelance Full Stack basé à Fès, Maroc. Spécialisé React, Laravel, Node.js, Docker, SEO.",
+      "url": "https://ali-khalouki.com",
+      "image": "https://ali-khalouki.com/ali-photo.png",
+      "email": "okhalouki46@gmail.com",
+      "telephone": "+212771747509",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fès",
+        "addressCountry": "MA"
+      },
+      "areaServed": ["Maroc", "France", "International"],
+      "priceRange": "300€ – 5000€",
+      "knowsAbout": ["React", "Next.js", "Laravel", "Node.js", "Docker", "SEO", "DevOps"],
+      "sameAs": [
+        "https://www.linkedin.com/in/ali-khalouki-114975253/",
+        "https://instagram.com/sherlock15_",
+        "https://wa.me/212771747509"
+      ]
+    }
+    </script>
+
+    <!-- Preload critical fonts to eliminate "Slow network" fallback warnings -->
+    <link rel="preload" href="%PUBLIC_URL%/static/media/CoolveticaRg-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="%PUBLIC_URL%/static/media/LaBelleAurore.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <!-- AK Identity favicon -->
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Sudip's Portfolio</title>
+    <title>Ali Khalouki — Développeur Web Freelance au Maroc</title>
   </head>
 
   <body>

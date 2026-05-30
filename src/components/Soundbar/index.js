@@ -31,7 +31,7 @@ const Box = styled.div`
   &:before {
     content: '<music>';
     font-family: 'La Belle Aurore', cursive;
-    color: #00ff7f;
+    color: #06B6D4;
     font-size: 18px;
     position: absolute;
     margin-top: -20px;
@@ -43,7 +43,7 @@ const Box = styled.div`
   &:after {
     content: '<music/>';
     font-family: 'La Belle Aurore', cursive;
-    color: #00ff7f;
+    color: #06B6D4;
     font-size: 18px;
     line-height: 20px;
     position: absolute;
@@ -65,7 +65,7 @@ const play = keyframes`
 }
 `
 const Line = styled.span`
-  background: #00ff7f;
+  background: #06B6D4;
   border: 1px solid;
 
   animation: ${play} 1s ease infinite;

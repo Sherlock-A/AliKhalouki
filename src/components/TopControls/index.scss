@@ -1,0 +1,118 @@
+.top-controls {
+  position: fixed;
+  top: 1.4rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(14, 17, 22, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 10px;
+  padding: 10px 18px;
+  animation: fadeIn 1s 1.5s both;
+}
+
+/* Language flags */
+.tc-langs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tc-lang {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 0;
+  transition: border-color 0.2s, transform 0.15s;
+  opacity: 0.6;
+
+  svg { display: block; border-radius: 2px; }
+
+  &:hover {
+    opacity: 1;
+    border-color: rgba(6, 182, 212, 0.5);
+    transform: translateY(-1px);
+  }
+
+  &.tc-lang--active {
+    opacity: 1;
+    border-color: #06B6D4;
+    box-shadow: 0 0 6px rgba(6, 182, 212, 0.35);
+  }
+}
+
+/* Separator */
+.tc-sep {
+  width: 1px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+/* Theme toggle */
+.tc-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #8a93a0;
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.2s, transform 0.3s;
+
+  &:hover {
+    color: #ffd700;
+    transform: rotate(25deg);
+  }
+}
+
+/* Music control */
+.tc-music {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tc-music-tag {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 13px;
+  color: #06B6D4;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.tc-bars {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Light mode overrides ── */
+[data-theme="light"] .top-controls {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .tc-sep {
+  background: rgba(14, 17, 22, 0.12);
+}
+
+[data-theme="light"] .tc-theme {
+  color: #5b6470;
+  &:hover { color: #2563EB; }
+}
+
+[data-theme="light"] .tc-music-tag { color: #2563EB; }
+
+[data-theme="light"] .tc-lang {
+  border-color: rgba(37, 99, 235, 0.1);
+  &:hover { border-color: rgba(37, 99, 235, 0.4); }
+  &.tc-lang--active { border-color: #2563EB; box-shadow: 0 0 6px rgba(37, 99, 235, 0.25); }
+}

@@ -10,9 +10,7 @@
 }
 
 .tags {
-  // color: #ffd700;
-  // color: #ff4500; // red
-  color: #00ff7f; // green
+  color: #06B6D4;
   opacity: 0.9;
   position: absolute;
   bottom: 0;
@@ -42,7 +40,12 @@
 
 .container.contact-page,
 .container.about-page,
-.container.skills-page {
+.container.skills-page,
+.container.services-page,
+.container.projects-page,
+.container.certificates-page,
+.container.blog-page,
+.container.blog-article-page {
   .text-zone {
     position: absolute;
     left: 10%;
@@ -56,7 +59,7 @@
     h1 {
       font-size: 53px;
       font-family: 'Coolvetica';
-      color: #00ff7f;
+      color: #06B6D4;
       font-weight: 400;
       margin-top: 0;
       position: relative;
@@ -66,7 +69,7 @@
       &:before {
         content: '<h1>';
         font-family: 'La Belle Aurore', cursive;
-        color: #00ff7f;
+        color: #06B6D4;
         font-size: 18px;
         position: absolute;
         margin-top: -10px;
@@ -78,7 +81,7 @@
       &:after {
         content: '<h1/>';
         font-family: 'La Belle Aurore', cursive;
-        color: #00ff7f;
+        color: #06B6D4;
         font-size: 18px;
         line-height: 18px;
         position: absolute;
@@ -110,7 +113,7 @@
 
   .text-animate-hover {
     &:hover {
-      color: #ff4500;
+      color: #2563EB;
     }
   }
 }
@@ -124,15 +127,15 @@
   @return unquote($value);
 }
 
-$shadows-small: multiple-box-shadow(1400);
-$shadows-medium: multiple-box-shadow(400);
-$shadows-big: multiple-box-shadow(200);
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
 
 html {
   height: 100%;
-  // background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   overflow: hidden;
 }
+
 #stars {
   width: 1px;
   height: 1px;
@@ -150,6 +153,7 @@ html {
     box-shadow: $shadows-small;
   }
 }
+
 #stars2 {
   width: 2px;
   height: 2px;
@@ -167,6 +171,7 @@ html {
     box-shadow: $shadows-medium;
   }
 }
+
 #stars3 {
   width: 3px;
   height: 3px;

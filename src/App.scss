@@ -1,13 +1,14 @@
-$primary-color: #ff4500;
+$primary-color: #2563EB;
 
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
+  src: url('./assets/fonts/helvetica-neu.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +18,7 @@ $primary-color: #ff4500;
     url('./assets/fonts/LaBelleAurore.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -26,6 +28,7 @@ $primary-color: #ff4500;
     url('./assets/fonts/CoolveticaRg-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 input,

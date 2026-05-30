@@ -1,0 +1,208 @@
+/* ── Light mode overrides ──────────────────────────────────────────── */
+[data-theme="light"] {
+  /* Page background */
+  html, body, .page { background: #f0f2f5 !important; }
+
+  /* Stars — hidden in light mode */
+  #stars, #stars2, #stars3 { display: none; }
+
+  /* Sidebar */
+  .nav-bar {
+    background: #ffffff;
+    border-right: 1px solid #e6e9ed;
+    box-shadow: 2px 0 16px rgba(14, 17, 22, 0.07);
+
+    nav a { color: #8a93a0; }
+    nav a.active svg, nav a:hover svg { color: #2563EB; }
+    nav a:hover { color: #2563EB; }
+
+    ul li a { color: #8a93a0; &:hover { color: #2563EB; } }
+  }
+
+  /* AK mark sidebar glow */
+  .sidebar-ak-mark {
+    filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.4));
+    &:hover { filter: drop-shadow(0 0 12px rgba(37, 99, 235, 0.8)); }
+  }
+
+  /* Lang buttons */
+  .lang-btn {
+    border-color: rgba(37, 99, 235, 0.2);
+    background: rgba(37, 99, 235, 0.02);
+    &:hover { border-color: rgba(37, 99, 235, 0.5); background: rgba(37, 99, 235, 0.06); }
+    &.lang-btn--active { border-color: #2563EB; background: rgba(37, 99, 235, 0.1); }
+    &.lang-btn--active .lang-code, &:hover .lang-code { color: #2563EB; }
+  }
+
+  /* Code HTML tags */
+  .tags { color: #2563EB; }
+
+  /* Home */
+  .home-page {
+    .text-zone h1         { color: #0E1116 !important; }
+    .text-zone h1:before,
+    .text-zone h1:after   { color: #2563EB !important; }
+    h2                    { color: #3a4450 !important; }
+    .home-stats .stat-label { color: #5b6470 !important; }
+    .flat-button {
+      color: #2563EB; border-color: #2563EB;
+      &:hover { background: #2563EB; color: #fff; }
+    }
+  }
+
+  /* Home logo rings */
+  .logo-ring { border-color: rgba(37, 99, 235, 0.2); }
+  .logo-ring-outer { border-color: rgba(37, 99, 235, 0.1); }
+  .ak-mark-main { filter: drop-shadow(0 0 12px rgba(37, 99, 235, 0.4)); }
+
+  /* Section pages h1 */
+  .container.about-page        .text-zone h1,
+  .container.skills-page       .text-zone h1,
+  .container.services-page     .text-zone h1,
+  .container.projects-page     .text-zone h1,
+  .container.contact-page      .text-zone h1,
+  .container.certificates-page .text-zone h1,
+  .container.blog-page         .text-zone h1 {
+    color: #2563EB;
+    &:before, &:after { color: #2563EB; }
+  }
+
+  /* Text */
+  .text-zone p { color: #1a1f26 !important; }
+  .about-tagline { color: #2563EB !important; }
+  .text-animate-hover:hover { color: #2563EB; }
+
+  /* Skills tag cloud */
+  .tagcloud { color: #2563EB !important; }
+  .tagcloud--item:hover { color: #06B6D4 !important; }
+
+  /* Services */
+  .services-wrap .service-card {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(37, 99, 235, 0.18);
+    &:hover { border-color: rgba(37, 99, 235, 0.5); background: rgba(37, 99, 235, 0.04); }
+    .service-icon { color: #2563EB; }
+    .service-content h2 { color: #2563EB; font-size: 16px; }
+    .service-content p { color: #1a2030; font-size: 13px; }
+    .service-price { color: #059669; border-color: rgba(5,150,105,0.35); }
+    .tech-tag { color: #2563EB !important; opacity: 0.85 !important; }
+  }
+  .process-title { color: #5b6470; }
+  .process-step .step-label { color: #3a4450; }
+  .process-step .step-number { color: #2563EB; opacity: 0.6; }
+  .container.services-page .text-zone {
+    .flat-button { color: #2563EB; border-color: #2563EB; &:hover { background: #2563EB; color: #fff; } }
+    .star { color: #2563EB; }
+  }
+
+  /* Projects */
+  .project-card {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(37, 99, 235, 0.18);
+    &:hover { border-color: rgba(37, 99, 235, 0.5); background: rgba(37, 99, 235, 0.04); }
+    h2 { color: #2563EB; }
+    p { color: #5b6470; }
+    .folder-icon { color: #2563EB; }
+    .project-tag { color: #2563EB; }
+    .project-link:hover { color: #06B6D4; }
+  }
+
+  /* Contact form */
+  .contact-form {
+    input[type='text'], input[type='email'], input[type='tel'], textarea, select {
+      background: #ffffff;
+      color: #0E1116;
+      border: 1px solid #d0d5dd;
+      &::placeholder { color: #7a8390; }
+      &:focus { border-color: #2563EB; background: #f5f8ff; }
+    }
+    select option { background: #ffffff; color: #0E1116; }
+    .form-group label { color: #5b6470; }
+    .flat-button {
+      color: #2563EB; border-color: #2563EB;
+      &:hover { background: #2563EB; color: #fff; }
+    }
+  }
+  .info-map { background: #0E1116; color: #fff; }
+
+  /* About photo */
+  .photo-frame { border-color: rgba(37, 99, 235, 0.55); box-shadow: 0 0 18px rgba(37,99,235,0.3), 0 0 40px rgba(37,99,235,0.1); }
+  .photo-name { color: #0E1116; }
+  .photo-loc { color: #5b6470; }
+
+  /* Theme toggle button */
+  .theme-btn { color: #5b6470; &:hover { color: #2563EB; } }
+}
+
+/* ── Certificates ───────────────── */
+[data-theme="light"] .blog-card {
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(37, 99, 235, 0.2);
+  &:hover { border-color: rgba(37, 99, 235, 0.5); background: rgba(37, 99, 235, 0.04); }
+  h2 { color: #0a0f1a !important; font-size: 18px; }
+  .blog-excerpt { color: #1a2030 !important; font-size: 14px; }
+  .blog-meta { color: #3a4450 !important; font-size: 12.5px; }
+  .blog-read-more { opacity: 1 !important; }
+  .blog-footer { border-top-color: rgba(0,0,0,0.1); }
+}
+
+[data-theme="light"] .blog-pagination button {
+  color: #5b6470;
+  border-color: rgba(37,99,235,0.25);
+  &.active { border-color: #2563EB; color: #2563EB; }
+  &:hover:not(.active) { border-color: rgba(37,99,235,0.5); color: #0E1116; }
+}
+
+[data-theme="light"] .container.blog-page .text-zone .blog-cta {
+  color: #2563EB; border-color: #2563EB;
+  &:hover { background: #2563EB; color: #fff; }
+}
+
+[data-theme="light"] .cert-card {
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(37, 99, 235, 0.2);
+  &:hover { border-color: rgba(37, 99, 235, 0.5); background: rgba(37, 99, 235, 0.04); }
+  h2 { color: #0a0f1a !important; font-size: 18px; }
+  .cert-institution { color: #3a4450 !important; font-size: 12px; }
+  .cert-desc { color: #1a2030 !important; font-size: 13.5px; }
+  .cert-date { color: #3a4450 !important; }
+  .cert-footer { border-top-color: rgba(0,0,0,0.1); }
+}
+
+[data-theme="light"] .container.certificates-page .text-zone .cert-cta {
+  color: #2563EB; border-color: #2563EB;
+  &:hover { background: #2563EB; color: #fff; }
+}
+
+/* ── Services extras ────────────── */
+[data-theme="light"] .service-tech .tech-tag { color: #2563EB; }
+[data-theme="light"] .process-step {
+  border-color: rgba(37,99,235,0.15);
+  background: rgba(255,255,255,0.5);
+  .step-number { color: #2563EB; }
+  .step-label { color: #7a8390; }
+}
+[data-theme="light"] .process-title { color: #7a8390; }
+[data-theme="light"] .process-section { border-color: rgba(37,99,235,0.1); background: rgba(255,255,255,0.4); }
+
+/* ── Contact extras ─────────────── */
+[data-theme="light"] .contact-response-time { color: #7a8390 !important; svg { color: #7a8390; } }
+[data-theme="light"] .info-map .info-location { color: #c0c8d4; svg { color: #06B6D4; } }
+[data-theme="light"] .info-map .info-name { color: #ffffff; }
+
+/* ── Home stats ─────────────────── */
+[data-theme="light"] .home-stats .stat-number { color: #2563EB; }
+[data-theme="light"] .home-stats .stat-label { color: #7a8390; }
+
+/* ── Back to top ────────────────── */
+[data-theme="light"] .back-to-top {
+  background: rgba(37,99,235,0.08);
+  border-color: rgba(37,99,235,0.3);
+  color: #2563EB;
+  &:hover { background: rgba(37,99,235,0.18); border-color: #2563EB; }
+}
+
+/* ── Scroll progress ────────────── */
+[data-theme="light"] .scroll-progress {
+  background: linear-gradient(to right, #2563EB, #06B6D4);
+}

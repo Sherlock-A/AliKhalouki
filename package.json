@@ -13,17 +13,16 @@
     "loaders.css": "0.1.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-helmet-async": "^3.0.0",
     "react-leaflet": "4.2.1",
     "react-loaders": "3.0.1",
     "react-router-dom": "6.28.0",
     "react-scripts": "5.0.1",
     "react-spinners": "0.14.1",
     "react-toastify": "10.0.6",
-    "react-tsparticles": "2.12.2",
     "sass": "1.80.6",
     "styled-components": "6.1.13",
     "TagCloud": "2.5.0",
-    "tsparticles": "3.5.0",
     "web-vitals": "4.2.4"
   },
   "scripts": {

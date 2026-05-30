@@ -1,39 +1,81 @@
 .logo-container {
   z-index: 0;
-  width: 400px;
-  height: 609px;
-  opacity: 1;
+  width: 300px;
+  height: 300px;
   position: absolute;
   top: 0;
-  right: 15%;
+  right: 8%;
   bottom: 0;
   left: auto;
   margin: auto;
-  animation: zoomInDown 2.5s ease-in-out 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoomInDown 2s ease-out 0.8s both;
   user-select: none;
-
-  svg {
-    width: 100%;
-    height: auto;
-    bottom: 0;
-    transform: rotateZ(30deg) !important;
-  }
-
-  .solid-logo {
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    opacity: 1;
-    transform: rotateZ(30deg) !important;
-    z-index: 1;
-  }
+  /* GPU layer — prevents rAF jank */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
-.svg-container {
-  stroke: #ffd700;
-  stroke-width: 10;
+/* Rotating ring — pure CSS border, no SVG, zero rAF cost */
+.logo-ring {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-top-color: rgba(6, 182, 212, 0.7);
+  border-right-color: rgba(37, 99, 235, 0.4);
+  animation: ringRotate 12s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+.logo-ring-outer {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  border-bottom-color: rgba(6, 182, 212, 0.35);
+  animation: ringRotate 22s linear infinite reverse;
+  will-change: transform;
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+/* Glow */
+.logo-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(6, 182, 212, 0.14) 0%,
+    rgba(37, 99, 235, 0.08) 45%,
+    transparent 70%
+  );
+  animation: glowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ak-mark-main {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.5))
+          drop-shadow(0 0 32px rgba(37, 99, 235, 0.2));
+  animation: fadeIn 1s ease-out 1.2s both;
+  will-change: filter;
+}
+
+@keyframes ringRotate {
+  to { transform: translateZ(0) rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1) translateZ(0); }
+  50%       { opacity: 1;   transform: scale(1.08) translateZ(0); }
 }
