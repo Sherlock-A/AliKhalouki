@@ -5,9 +5,14 @@
   margin-top: -3%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   padding: 4% 20px 20px 10px;
   overflow-y: auto;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .service-card {
@@ -100,57 +105,140 @@
   }
 }
 
-/* Process steps */
+/* ── Pagination ───────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 10px 0 6px;
+  margin-top: 4px;
+
+  .pagination-btn {
+    background: transparent;
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: #06B6D4;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: #06B6D4;
+    }
+
+    &:disabled {
+      opacity: 0.22;
+      cursor: default;
+    }
+  }
+
+  .pagination-info {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #7a8390;
+    letter-spacing: 0.1em;
+    min-width: 36px;
+    text-align: center;
+  }
+}
+
+/* ── Process agile ────────────────────────────────────────── */
 .process-section {
-  margin-top: 6px;
-  padding: 12px 14px;
+  margin-top: 10px;
+  padding: 14px 16px 16px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(6, 182, 212, 0.1);
   border-radius: 8px;
-  opacity: 0;
-  animation: fadeInUp 0.7s forwards;
 }
 
 .process-title {
-  font-size: 11px;
+  font-size: 10px;
   font-family: 'Courier New', monospace;
-  color: #7a8390;
+  color: #06B6D4;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin: 0 0 10px 0;
+  letter-spacing: 0.22em;
+  margin: 0 0 14px 0;
+  opacity: 0.7;
 }
 
 .process-steps {
   display: flex;
-  gap: 6px;
+  align-items: flex-start;
+  position: relative;
+
+  /* ligne continue derrière tous les nœuds */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(6, 182, 212, 0.5),
+      rgba(6, 182, 212, 0.1)
+    );
+    pointer-events: none;
+  }
 }
 
 .process-step {
   flex: 1;
-  text-align: center;
-  padding: 8px 4px;
-  border: 1px solid rgba(6, 182, 212, 0.12);
-  border-radius: 6px;
-  opacity: 0;
-  animation: fadeInUp 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 1;
+  cursor: default;
 
-  .step-number {
-    font-family: 'Coolvetica', sans-serif;
-    font-size: 20px;
-    color: #06B6D4;
-    opacity: 0.35;
-    line-height: 1;
-    display: block;
+  &:hover .step-node {
+    border-color: #06B6D4;
+    background: rgba(6, 182, 212, 0.18);
+  }
+
+  .step-node {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid rgba(6, 182, 212, 0.45);
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.25s, background 0.25s;
+
+    .step-number {
+      font-family: 'Coolvetica', sans-serif;
+      font-size: 10px;
+      color: #06B6D4;
+      line-height: 1;
+    }
   }
 
   .step-label {
-    font-size: 10.5px;
+    font-size: 10px;
+    font-family: 'Coolvetica', sans-serif;
+    color: #d0d8e4;
+    letter-spacing: 0.6px;
+    text-align: center;
+  }
+
+  .step-sub {
+    font-size: 8px;
     font-family: 'Courier New', monospace;
-    color: #8a93a0;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-top: 3px;
-    display: block;
+    color: #4e5a68;
+    letter-spacing: 0.04em;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 62px;
   }
 }
 

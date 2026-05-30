@@ -4,6 +4,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowUpRightFromSquare,
   faFolder,
+  faHammer,
   faLock,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -57,11 +58,24 @@ const projects = [
     tags: ['Python', 'LangChain', 'OpenAI', 'Automation'],
     badge: 'private',
   },
+  {
+    title: 'Richmen Game for Palestine',
+    url: null,
+    descKey: "Jeu de plateau Monopoly moderne en ligne — achat de propriétés, négociations, transactions et parties multijoueur en temps réel. En cours de réalisation.",
+    tags: ['Phaser.js', 'TypeScript', 'Socket.io', 'Node.js', 'WebGL', 'Canvas', 'REST API', 'Webpack'],
+    badge: 'wip',
+  },
 ]
+
+const PAGE_SIZE = 4
 
 const Project = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [page, setPage] = useState(0)
+
+  const totalPages = Math.ceil(projects.length / PAGE_SIZE)
+  const visible = projects.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
 
   useEffect(() => {
     const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2000)
@@ -87,56 +101,84 @@ const Project = () => {
           <p>{t('projects.intro')}</p>
         </div>
         <div className="projects-wrap">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="project-card"
-              style={{ animationDelay: `${1.2 + index * 0.15}s` }}
-            >
-              <div className="project-header">
-                <FontAwesomeIcon
-                  icon={
-                    project.badge === 'private' ? faLock
-                    : project.badge === 'social' ? faInstagram
-                    : faFolder
-                  }
-                  className={`folder-icon${
-                    project.badge === 'private' ? ' folder-icon--private'
-                    : project.badge === 'social'  ? ' folder-icon--social'
-                    : ''
-                  }`}
-                />
-                <div className="project-links">
-                  {project.badge === 'private' ? (
-                    <span className="badge-private">
-                      <FontAwesomeIcon icon={faLock} /> {t('projects.private')}
-                    </span>
-                  ) : project.badge === 'social' ? (
-                    <span className="badge-social">
-                      <FontAwesomeIcon icon={faInstagram} /> {t('projects.social')}
-                    </span>
-                  ) : (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
-                      title={`Voir ${project.title}`}
-                    >
-                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                    </a>
-                  )}
+          <div className="project-grid">
+            {visible.map((project, index) => (
+              <div
+                key={page * PAGE_SIZE + index}
+                className="project-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="project-header">
+                  <FontAwesomeIcon
+                    icon={
+                      project.badge === 'private' ? faLock
+                      : project.badge === 'social'  ? faInstagram
+                      : project.badge === 'wip'     ? faHammer
+                      : faFolder
+                    }
+                    className={`folder-icon${
+                      project.badge === 'private' ? ' folder-icon--private'
+                      : project.badge === 'social'  ? ' folder-icon--social'
+                      : project.badge === 'wip'     ? ' folder-icon--wip'
+                      : ''
+                    }`}
+                  />
+                  <div className="project-links">
+                    {project.badge === 'private' ? (
+                      <span className="badge-private">
+                        <FontAwesomeIcon icon={faLock} /> {t('projects.private')}
+                      </span>
+                    ) : project.badge === 'social' ? (
+                      <span className="badge-social">
+                        <FontAwesomeIcon icon={faInstagram} /> {t('projects.social')}
+                      </span>
+                    ) : project.badge === 'wip' ? (
+                      <span className="badge-wip">
+                        <FontAwesomeIcon icon={faHammer} /> En cours
+                      </span>
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link"
+                        title={`Voir ${project.title}`}
+                      >
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <h2>{project.title}</h2>
+                <p>{project.descKey}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="project-tag">{tag}</span>
+                  ))}
                 </div>
               </div>
-              <h2>{project.title}</h2>
-              <p>{project.descKey}</p>
-              <div className="project-tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="project-tag">{tag}</span>
-                ))}
-              </div>
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <div className="pagination">
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p - 1)}
+                disabled={page === 0}
+              >
+                ←
+              </button>
+              <span className="pagination-info">{page + 1} / {totalPages}</span>
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p + 1)}
+                disabled={page === totalPages - 1}
+              >
+                →
+              </button>
             </div>
-          ))}
+          )}
         </div>
       </div>
       <Loader type="pacman" />

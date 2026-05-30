@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import {
+  faChevronLeft,
+  faChevronRight,
   faCode,
   faDatabase,
   faMagnifyingGlass,
@@ -27,17 +29,22 @@ const TECH_STACKS = [
   ['REST API', 'Node.js', 'MySQL', 'MongoDB'],
 ]
 
+const PAGE_SIZE = 3
+
 const Services = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [page, setPage] = useState(0)
+
+  const items = t('services.items')
+  const steps = t('services.steps')
+  const totalPages = Math.ceil(items.length / PAGE_SIZE)
+  const visible = items.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
 
   useEffect(() => {
     const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2000)
     return () => clearTimeout(timer)
   }, [])
-
-  const items = t('services.items')
-  const steps = t('services.steps')
 
   return (
     <>
@@ -68,44 +75,67 @@ const Services = () => {
         </div>
 
         <div className="services-wrap">
-          {items.map((service, index) => (
-            <div
-              key={index}
-              className="service-card"
-              style={{ animationDelay: `${1.2 + index * 0.15}s` }}
-            >
-              <div className="service-icon">
-                <FontAwesomeIcon icon={ICONS[index]} />
-              </div>
-              <div className="service-content">
-                <div className="service-head">
-                  <h2>{service.title}</h2>
-                  {service.price && (
-                    <span className="service-price">{service.price}</span>
-                  )}
+          <div className="service-list">
+            {visible.map((service, index) => {
+              const globalIndex = page * PAGE_SIZE + index
+              return (
+                <div
+                  key={globalIndex}
+                  className="service-card"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="service-icon">
+                    <FontAwesomeIcon icon={ICONS[globalIndex]} />
+                  </div>
+                  <div className="service-content">
+                    <div className="service-head">
+                      <h2>{service.title}</h2>
+                      {service.price && (
+                        <span className="service-price">{service.price}</span>
+                      )}
+                    </div>
+                    <p>{service.desc}</p>
+                    <div className="service-tech">
+                      {TECH_STACKS[globalIndex].map((tag) => (
+                        <span key={tag} className="tech-tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <p>{service.desc}</p>
-                <div className="service-tech">
-                  {TECH_STACKS[index].map((tag) => (
-                    <span key={tag} className="tech-tag">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+              )
+            })}
+          </div>
 
-          {/* Process steps */}
-          <div className="process-section" style={{ animationDelay: `${1.2 + items.length * 0.15 + 0.2}s` }}>
+          {totalPages > 1 && (
+            <div className="pagination">
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p - 1)}
+                disabled={page === 0}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <span className="pagination-info">{page + 1} / {totalPages}</span>
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p + 1)}
+                disabled={page === totalPages - 1}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+          )}
+
+          <div className="process-section">
             <p className="process-title">{t('services.processTitle')}</p>
             <div className="process-steps">
               {steps.map((step, i) => (
-                <div
-                  key={i}
-                  className="process-step"
-                  style={{ animationDelay: `${1.2 + items.length * 0.15 + 0.3 + i * 0.1}s` }}
-                >
-                  <div className="step-number">0{i + 1}</div>
-                  <div className="step-label">{step}</div>
+                <div key={i} className="process-step">
+                  <div className="step-node">
+                    <span className="step-number">0{i + 1}</span>
+                  </div>
+                  <span className="step-label">{step.label}</span>
+                  <span className="step-sub">{step.sub}</span>
                 </div>
               ))}
             </div>

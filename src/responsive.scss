@@ -12,7 +12,12 @@
 
   .container .text-zone {
     width: 38% !important;
-    left: 7% !important;
+    left: 9% !important;
+  }
+
+  /* h1 desktop a left:-10px qui clipe derrière la sidebar */
+  .container .text-zone h1 {
+    left: 0 !important;
   }
 
   .services-wrap  { width: 52% !important; }
@@ -26,6 +31,17 @@
   .home-page .text-zone { width: 60% !important; }
 
   .logo-container { width: 38% !important; right: 1% !important; }
+
+  /* ── Tags décoratifs h1 <h1> / </h1> : supprimés dès tablette ── */
+  .container .text-zone h1:before,
+  .container .text-zone h1:after {
+    display: none !important;
+  }
+
+  /* ── Tags <body> / </body> / </html> : supprimés dès tablette ── */
+  .tags, .top-tags {
+    display: none !important;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════

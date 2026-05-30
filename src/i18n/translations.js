@@ -28,8 +28,14 @@ const translations = {
       title: 'Services',
       intro: 'Développeur Web Freelance au Maroc spécialisé dans la création de sites internet sur mesure. Des solutions performantes et adaptées à vos besoins.',
       cta: 'Demander un devis gratuit',
-      processTitle: 'Comment ça marche',
-      steps: ['Brief', 'Design', 'Développement', 'Livraison'],
+      processTitle: 'Notre méthode de travail',
+      steps: [
+        { label: 'Brief', sub: 'Cadrage & besoins' },
+        { label: 'Design', sub: 'Wireframe & maquette' },
+        { label: 'Sprint', sub: 'Développement itératif' },
+        { label: 'Review', sub: 'Tests & validation client' },
+        { label: 'Deploy', sub: 'Livraison & support' },
+      ],
       items: [
         {
           title: 'Création de Sites Internet Sur Mesure',
@@ -140,8 +146,14 @@ const translations = {
       title: 'Services',
       intro: 'Freelance Web Developer in Morocco specializing in custom website creation. High-performance solutions tailored to your needs.',
       cta: 'Request a free quote',
-      processTitle: 'How it works',
-      steps: ['Brief', 'Design', 'Development', 'Delivery'],
+      processTitle: 'Our working method',
+      steps: [
+        { label: 'Brief', sub: 'Scoping & needs' },
+        { label: 'Design', sub: 'Wireframe & mockup' },
+        { label: 'Sprint', sub: 'Iterative development' },
+        { label: 'Review', sub: 'Tests & client feedback' },
+        { label: 'Deploy', sub: 'Delivery & support' },
+      ],
       items: [
         {
           title: 'Custom Website Development',
@@ -252,8 +264,14 @@ const translations = {
       title: 'Servicios',
       intro: 'Desarrollador Web Freelance en Marruecos especializado en la creación de sitios web a medida. Soluciones de alto rendimiento adaptadas a tus necesidades.',
       cta: 'Solicitar presupuesto gratis',
-      processTitle: 'Cómo funciona',
-      steps: ['Brief', 'Diseño', 'Desarrollo', 'Entrega'],
+      processTitle: 'Nuestro método de trabajo',
+      steps: [
+        { label: 'Brief', sub: 'Alcance & necesidades' },
+        { label: 'Diseño', sub: 'Wireframe & maqueta' },
+        { label: 'Sprint', sub: 'Desarrollo iterativo' },
+        { label: 'Review', sub: 'Pruebas & validación' },
+        { label: 'Deploy', sub: 'Entrega & soporte' },
+      ],
       items: [
         {
           title: 'Creación de Sitios Web a Medida',
@@ -364,8 +382,14 @@ const translations = {
       title: 'Leistungen',
       intro: 'Freelance Webentwickler in Marokko, spezialisiert auf maßgeschneiderte Websites. Leistungsstarke Lösungen für Ihre Bedürfnisse.',
       cta: 'Kostenloses Angebot anfordern',
-      processTitle: 'So funktioniert es',
-      steps: ['Brief', 'Design', 'Entwicklung', 'Lieferung'],
+      processTitle: 'Unsere Arbeitsmethode',
+      steps: [
+        { label: 'Brief', sub: 'Anforderungen klären' },
+        { label: 'Design', sub: 'Wireframe & Mockup' },
+        { label: 'Sprint', sub: 'Iterative Entwicklung' },
+        { label: 'Review', sub: 'Tests & Kundenfeedback' },
+        { label: 'Deploy', sub: 'Lieferung & Support' },
+      ],
       items: [
         {
           title: 'Maßgeschneiderte Website-Entwicklung',

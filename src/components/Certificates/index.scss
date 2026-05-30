@@ -3,12 +3,17 @@
   width: 53%;
   height: 115%;
   margin-top: -3%;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 20px 20px 10px;
+  overflow-y: auto;
+}
+
+.cert-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  padding: 5% 20px 20px 10px;
   align-content: start;
-  overflow-y: auto;
 }
 
 .cert-card {
@@ -99,6 +104,49 @@
     padding: 3px 9px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 0 4px;
+  margin-top: 12px;
+
+  .pagination-btn {
+    background: transparent;
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: #06B6D4;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover:not(:disabled) {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: #06B6D4;
+    }
+
+    &:disabled {
+      opacity: 0.25;
+      cursor: default;
+    }
+  }
+
+  .pagination-info {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #7a8390;
+    letter-spacing: 0.1em;
+    min-width: 40px;
+    text-align: center;
   }
 }
 

@@ -74,9 +74,15 @@ const CERTS = [
   },
 ]
 
+const PAGE_SIZE = 4
+
 const Certificates = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [page, setPage] = useState(0)
+
+  const totalPages = Math.ceil(CERTS.length / PAGE_SIZE)
+  const visible = CERTS.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
 
   useEffect(() => {
     const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2000)
@@ -106,45 +112,68 @@ const Certificates = () => {
         </div>
 
         <div className="certificates-wrap">
-          {CERTS.map((cert, index) => {
-            const color = CATEGORY_COLORS[cert.category] || '#06B6D4'
-            return (
-              <div
-                key={index}
-                className="cert-card"
-                style={{ animationDelay: `${1.2 + index * 0.12}s` }}
-              >
-                <div className="cert-header">
-                  <FontAwesomeIcon icon={faAward} className="award-icon" style={{ color }} />
-                  {cert.url && (
-                    <a
-                      href={cert.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="cert-link"
-                      title={t('certificates.link')}
+          <div className="cert-grid">
+            {visible.map((cert, index) => {
+              const color = CATEGORY_COLORS[cert.category] || '#06B6D4'
+              const globalIndex = page * PAGE_SIZE + index
+              return (
+                <div
+                  key={globalIndex}
+                  className="cert-card"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="cert-header">
+                    <FontAwesomeIcon icon={faAward} className="award-icon" style={{ color }} />
+                    {cert.url && (
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="cert-link"
+                        title={t('certificates.link')}
+                      >
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                      </a>
+                    )}
+                  </div>
+
+                  <div className="cert-institution">{cert.institution}</div>
+                  <h2>{cert.title}</h2>
+                  <p className="cert-desc">{t('certificates.descs')[globalIndex]}</p>
+
+                  <div className="cert-footer">
+                    <span className="cert-date">{cert.date}</span>
+                    <span
+                      className="cert-badge"
+                      style={{ color, borderColor: `${color}55` }}
                     >
-                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                    </a>
-                  )}
+                      {cert.category}
+                    </span>
+                  </div>
                 </div>
+              )
+            })}
+          </div>
 
-                <div className="cert-institution">{cert.institution}</div>
-                <h2>{cert.title}</h2>
-                <p className="cert-desc">{t('certificates.descs')[index]}</p>
-
-                <div className="cert-footer">
-                  <span className="cert-date">{cert.date}</span>
-                  <span
-                    className="cert-badge"
-                    style={{ color, borderColor: `${color}55` }}
-                  >
-                    {cert.category}
-                  </span>
-                </div>
-              </div>
-            )
-          })}
+          {totalPages > 1 && (
+            <div className="pagination">
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p - 1)}
+                disabled={page === 0}
+              >
+                ←
+              </button>
+              <span className="pagination-info">{page + 1} / {totalPages}</span>
+              <button
+                className="pagination-btn"
+                onClick={() => setPage(p => p + 1)}
+                disabled={page === totalPages - 1}
+              >
+                →
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <Loader type="pacman" />
