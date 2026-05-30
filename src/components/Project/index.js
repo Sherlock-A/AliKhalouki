@@ -17,10 +17,10 @@ import './index.scss'
 const projects = [
   {
     title: 'Cadex',
-    url: 'https://cadex.ma',
+    url: null,
     descKey: 'Site corporate WordPress/Elementor pour Cadex, Casablanca. Animations GSAP, SEO Yoast, CDN Cloudflare, performance LiteSpeed.',
     tags: ['WordPress', 'Elementor', 'PHP', 'MySQL', 'GSAP', 'Cloudflare', 'Yoast SEO', 'Bootstrap'],
-    badge: null,
+    badge: 'private',
   },
   {
     title: 'Jobly',
