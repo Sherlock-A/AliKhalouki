@@ -191,12 +191,25 @@
     overflow: visible !important;
   }
 
+  /* Skills — cloud au-dessus du texte */
+  .container.skills-page {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .container.skills-page .text-zone {
+    order: 2 !important;
+    padding-top: 12px !important;
+  }
+
   .tagcloud-wrap {
-    height: 320px !important;
+    order: 1 !important;
+    height: 300px !important;
+    overflow: hidden !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-top: 16px !important;
+    margin-top: 8px !important;
   }
 
   /* Carte desktop → cachée sur mobile */
