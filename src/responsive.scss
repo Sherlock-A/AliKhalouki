@@ -1,0 +1,268 @@
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE — Portfolio Ali Khalouki
+   Breakpoints : 1100px (tablet large) | 768px (tablet) | 480px (mobile)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Shared helpers ──────────────────────────────────────── */
+@mixin page-mobile {
+  .text-zone {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 20px 20px 0 !important;
+    box-sizing: border-box;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   LARGE TABLET — 1100px
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+
+  /* Layout */
+  .container {
+    .text-zone {
+      width: 38% !important;
+      left: 8% !important;
+    }
+  }
+
+  .services-wrap,
+  .certificates-wrap,
+  .blog-wrap,
+  .projects-wrap {
+    width: 50% !important;
+  }
+
+  .map-wrap { width: 48% !important; }
+
+  /* Home */
+  .home-page .text-zone {
+    width: 55% !important;
+  }
+
+  /* Logo canvas */
+  .logo-container {
+    right: 2% !important;
+    width: 42% !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   TABLET — 768px
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Sidebar ── */
+  .nav-bar {
+    width: 100% !important;
+    height: 60px !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 12px !important;
+    border-right: none !important;
+    border-top: 1px solid rgba(6,182,212,0.2) !important;
+
+    .logo { display: none !important; }
+
+    nav {
+      position: static !important;
+      height: auto !important;
+      margin: 0 !important;
+      display: flex !important;
+      gap: 0 !important;
+      width: auto !important;
+
+      a {
+        font-size: 18px !important;
+        line-height: 60px !important;
+        height: 60px !important;
+        padding: 0 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        svg { opacity: 1 !important; }
+
+        &:after { display: none !important; }
+        &:hover svg { opacity: 1 !important; }
+      }
+    }
+
+    ul {
+      position: static !important;
+      bottom: auto !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 2px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+
+      li a {
+        padding: 0 8px !important;
+        font-size: 16px !important;
+        line-height: 60px !important;
+      }
+
+      .theme-btn {
+        padding: 0 8px !important;
+        line-height: 60px !important;
+        height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      .lang-switcher {
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+        gap: 3px !important;
+        padding: 8px !important;
+      }
+    }
+  }
+
+  /* ── Page container ── */
+  .page { overflow-y: auto !important; }
+
+  .container {
+    position: relative !important;
+    height: auto !important;
+    min-height: calc(100vh - 60px) !important;
+    padding-bottom: 80px !important;
+
+    @include page-mobile;
+  }
+
+  /* ── Tags HTML decoratifs ── */
+  .tags, .top-tags { display: none !important; }
+
+  /* ── Content wraps → full width, no float ── */
+  .services-wrap,
+  .certificates-wrap,
+  .blog-wrap,
+  .article-body {
+    float: none !important;
+    width: 92% !important;
+    margin: 20px auto 0 !important;
+    height: auto !important;
+    padding: 0 0 20px !important;
+    overflow-y: visible !important;
+  }
+
+  .certificates-wrap {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── Map & Contact ── */
+  .container.contact-page .text-zone {
+    width: 92% !important;
+    left: 4% !important;
+  }
+
+  .map-wrap {
+    float: none !important;
+    width: 92% !important;
+    margin: 20px auto 0 !important;
+    height: 280px !important;
+  }
+
+  /* ── Home ── */
+  .home-page {
+    .text-zone {
+      position: absolute !important;
+      left: 8% !important;
+      top: 8% !important;
+      width: 85% !important;
+    }
+
+    h1 { white-space: normal !important; font-size: clamp(28px, 6vw, 44px) !important; }
+    h2 { white-space: normal !important; font-size: 10px !important; letter-spacing: 2px !important; }
+  }
+
+  /* Logo canvas — masqué sur mobile */
+  .logo-container { display: none !important; }
+
+  /* ── Skills wordcloud ── */
+  .tagcloud { font-size: 12px !important; }
+
+  /* ── TopControls — déplacer en haut ── */
+  .top-controls-wrap {
+    top: 8px !important;
+    right: 8px !important;
+  }
+
+  /* ── Back to top ── */
+  .back-to-top { bottom: 72px !important; }
+
+  /* ── Scroll progress ── */
+  .scroll-progress { top: 0 !important; }
+
+  /* ── Layout h1 ── */
+  .container .text-zone h1 {
+    font-size: 36px !important;
+    left: 0 !important;
+  }
+
+  /* ── Blog / Article ── */
+  .blog-wrap { gap: 14px !important; }
+  .blog-card h2 { font-size: 15px !important; }
+
+  /* ── Soundbar ── */
+  .soundbar { display: none !important; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE — 480px
+   ══════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* Sidebar nav — icônes seulement, plus compactes */
+  .nav-bar nav a { padding: 0 7px !important; font-size: 16px !important; }
+  .nav-bar ul li a { padding: 0 6px !important; font-size: 14px !important; }
+
+  /* Certificats → 1 colonne */
+  .certificates-wrap {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact form → 1 colonne */
+  .contact-form .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Home title */
+  .home-page h1 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-page .home-stats {
+    gap: 12px !important;
+    .stat-number { font-size: 22px !important; }
+    .stat-label  { font-size: 7px !important; }
+  }
+
+  /* Skills text zone */
+  .container.skills-page .text-zone {
+    padding-top: 40px !important;
+    p { font-size: 13px !important; }
+  }
+
+  /* Services card */
+  .service-card { padding: 12px !important; }
+  .service-card .service-content h2 { font-size: 13px !important; }
+
+  /* Blog card */
+  .blog-card { padding: 14px 16px !important; }
+
+  /* Cert card */
+  .cert-card h2 { font-size: 15px !important; }
+}

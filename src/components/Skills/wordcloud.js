@@ -49,8 +49,9 @@ const WordCloud = () => {
     'Merise',
   ]
 
+  const isMobile = window.innerWidth <= 768
   const options = {
-    radius: 300,
+    radius: isMobile ? 150 : 300,
     maxSpeed: 'normal',
     initSpeed: 'normal',
     direction: 135,
