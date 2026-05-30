@@ -148,13 +148,22 @@
   .services-wrap,
   .certificates-wrap,
   .blog-wrap,
-  .article-body {
+  .article-body,
+  .tagcloud-wrap {
     float: none !important;
     width: 92% !important;
     margin: 20px auto 0 !important;
     height: auto !important;
     padding: 0 0 20px !important;
     overflow-y: visible !important;
+  }
+
+  .tagcloud-wrap {
+    height: 320px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
   }
 
   .certificates-wrap {
