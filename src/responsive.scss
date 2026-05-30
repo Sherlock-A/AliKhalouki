@@ -1,98 +1,93 @@
 /* ═══════════════════════════════════════════════════════════
-   RESPONSIVE — Portfolio Ali Khalouki
-   Breakpoints : 1100px (tablet large) | 768px (tablet) | 480px (mobile)
+   RESPONSIVE — Solution définitive
+   Principe : corriger la chaîne de positionnement à la racine
+   Breakpoints : 1100px | 768px | 480px
    ═══════════════════════════════════════════════════════════ */
-
-/* ── Shared helpers ──────────────────────────────────────── */
-@mixin page-mobile {
-  .text-zone {
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    transform: none !important;
-    width: 100% !important;
-    max-height: none !important;
-    overflow: visible !important;
-    padding: 20px 20px 0 !important;
-    box-sizing: border-box;
-  }
-}
 
 /* ══════════════════════════════════════════════════════════
    LARGE TABLET — 1100px
+   Ajuster les proportions sans casser le layout absolu
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 1100px) {
 
-  /* Layout */
-  .container {
-    .text-zone {
-      width: 38% !important;
-      left: 8% !important;
-    }
+  .container .text-zone {
+    width: 38% !important;
+    left: 7% !important;
   }
 
-  .services-wrap,
-  .certificates-wrap,
-  .blog-wrap,
-  .projects-wrap {
-    width: 50% !important;
-  }
+  .services-wrap  { width: 52% !important; }
+  .tagcloud-wrap  { width: 52% !important; }
+  .certificates-wrap { width: 52% !important; }
+  .blog-wrap      { width: 52% !important; }
+  .map-wrap       { width: 50% !important; }
 
-  .map-wrap { width: 48% !important; }
+  .container.contact-page .text-zone { width: 44% !important; }
 
-  /* Home */
-  .home-page .text-zone {
-    width: 55% !important;
-  }
+  .home-page .text-zone { width: 60% !important; }
 
-  /* Logo canvas */
-  .logo-container {
-    right: 2% !important;
-    width: 42% !important;
-  }
+  .logo-container { width: 38% !important; right: 1% !important; }
 }
 
 /* ══════════════════════════════════════════════════════════
-   TABLET — 768px
+   TABLET + MOBILE — 768px
+   Réécriture complète du layout : absolu → flow normal
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* ── Sidebar ── */
+  /* ── 1. Débloquer le scroll global ── */
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+
+  body, .page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100svh !important;
+  }
+
+  /* ── 2. Sidebar → barre fixe en bas ── */
   .nav-bar {
-    width: 100% !important;
-    height: 60px !important;
     position: fixed !important;
+    width: 100vw !important;
+    height: 56px !important;
     bottom: 0 !important;
     top: auto !important;
-    z-index: 10 !important;
+    left: 0 !important;
+    z-index: 100 !important;
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 0 12px !important;
+    padding: 0 8px !important;
     border-right: none !important;
-    border-top: 1px solid rgba(6,182,212,0.2) !important;
+    border-top: 1px solid rgba(6, 182, 212, 0.2) !important;
+    min-height: unset !important;
 
     .logo { display: none !important; }
 
     nav {
       position: static !important;
-      height: auto !important;
+      height: 56px !important;
+      top: auto !important;
       margin: 0 !important;
       display: flex !important;
-      gap: 0 !important;
+      flex-direction: row !important;
+      align-items: center !important;
       width: auto !important;
 
       a {
-        font-size: 18px !important;
-        line-height: 60px !important;
-        height: 60px !important;
-        padding: 0 10px !important;
+        font-size: 17px !important;
+        height: 56px !important;
+        line-height: 56px !important;
+        padding: 0 9px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
 
         svg { opacity: 1 !important; }
-
         &:after { display: none !important; }
         &:hover svg { opacity: 1 !important; }
       }
@@ -102,60 +97,91 @@
       position: static !important;
       bottom: auto !important;
       display: flex !important;
+      flex-direction: row !important;
       align-items: center !important;
-      gap: 2px !important;
+      gap: 0 !important;
       padding: 0 !important;
       margin: 0 !important;
 
-      li a {
-        padding: 0 8px !important;
-        font-size: 16px !important;
-        line-height: 60px !important;
-      }
+      li { margin: 0 !important; }
 
-      .theme-btn {
+      li a {
+        font-size: 15px !important;
         padding: 0 8px !important;
-        line-height: 60px !important;
-        height: 60px !important;
+        height: 56px !important;
+        line-height: 56px !important;
         display: flex !important;
         align-items: center !important;
       }
 
-      .lang-switcher {
-        grid-template-columns: 1fr 1fr 1fr 1fr !important;
-        gap: 3px !important;
-        padding: 8px !important;
+      .theme-btn {
+        height: 56px !important;
+        padding: 0 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        width: auto !important;
       }
+
+      .lang-switcher {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 2px !important;
+        padding: 6px !important;
+      }
+
+      .lang-btn { padding: 3px 2px 2px !important; }
     }
   }
 
-  /* ── Page container ── */
-  .page { overflow-y: auto !important; }
-
+  /* ── 3. Container → flow normal ── */
   .container {
     position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     height: auto !important;
-    min-height: calc(100vh - 60px) !important;
-    padding-bottom: 80px !important;
-
-    @include page-mobile;
+    min-height: calc(100svh - 56px) !important;
+    padding: 0 16px 80px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
   }
 
-  /* ── Tags HTML decoratifs ── */
-  .tags, .top-tags { display: none !important; }
+  /* ── 4. text-zone → block pleine largeur ── */
+  .container .text-zone {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 28px 0 0 !important;
+    vertical-align: top !important;
+  }
 
-  /* ── Content wraps → full width, no float ── */
+  /* Contact — override spécifique */
+  .container.contact-page .text-zone {
+    padding: 28px 0 0 !important;
+    overflow-y: visible !important;
+  }
+
+  /* ── 5. Tous les wraps → pleine largeur, fin du float ── */
   .services-wrap,
   .certificates-wrap,
   .blog-wrap,
+  .tagcloud-wrap,
   .article-body,
-  .tagcloud-wrap {
+  .map-wrap {
     float: none !important;
-    width: 92% !important;
-    margin: 20px auto 0 !important;
+    width: 100% !important;
     height: auto !important;
-    padding: 0 0 20px !important;
-    overflow-y: visible !important;
+    margin: 24px 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
   .tagcloud-wrap {
@@ -163,69 +189,52 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-top: 10px !important;
   }
 
-  .certificates-wrap {
-    grid-template-columns: 1fr 1fr !important;
-  }
+  .map-wrap { height: 280px !important; }
 
-  /* ── Map & Contact ── */
-  .container.contact-page .text-zone {
-    width: 92% !important;
-    left: 4% !important;
-  }
-
-  .map-wrap {
-    float: none !important;
-    width: 92% !important;
-    margin: 20px auto 0 !important;
-    height: 280px !important;
-  }
-
-  /* ── Home ── */
+  /* ── 6. Home — exception : garde layout absolu pour le logo ── */
   .home-page {
     .text-zone {
       position: absolute !important;
-      left: 8% !important;
-      top: 8% !important;
-      width: 85% !important;
+      left: 5% !important;
+      top: 6% !important;
+      width: 88% !important;
+      transform: none !important;
+      padding: 0 !important;
     }
 
-    h1 { white-space: normal !important; font-size: clamp(28px, 6vw, 44px) !important; }
-    h2 { white-space: normal !important; font-size: 10px !important; letter-spacing: 2px !important; }
+    h1 { white-space: normal !important; font-size: clamp(26px, 6vw, 42px) !important; }
+    h2 { white-space: normal !important; font-size: 10px !important; letter-spacing: 1.5px !important; }
   }
 
-  /* Logo canvas — masqué sur mobile */
-  .logo-container { display: none !important; }
+  /* ── 7. Éléments masqués sur mobile ── */
+  .tags, .top-tags, .logo-container, .soundbar { display: none !important; }
 
-  /* ── Skills wordcloud ── */
-  .tagcloud { font-size: 12px !important; }
-
-  /* ── TopControls — déplacer en haut ── */
+  /* ── 8. TopControls ── */
   .top-controls-wrap {
+    position: fixed !important;
     top: 8px !important;
     right: 8px !important;
+    z-index: 50 !important;
   }
 
-  /* ── Back to top ── */
-  .back-to-top { bottom: 72px !important; }
+  /* ── 9. Scroll progress + back-to-top ── */
+  .scroll-progress { display: none !important; }
+  .back-to-top { bottom: 68px !important; right: 12px !important; }
 
-  /* ── Scroll progress ── */
-  .scroll-progress { top: 0 !important; }
-
-  /* ── Layout h1 ── */
+  /* ── 10. Titres h1 ── */
   .container .text-zone h1 {
-    font-size: 36px !important;
+    font-size: 34px !important;
     left: 0 !important;
+    margin-bottom: 20px !important;
+
+    &:before { left: -8px !important; }
+    &:after  { left: -16px !important; }
   }
 
-  /* ── Blog / Article ── */
-  .blog-wrap { gap: 14px !important; }
-  .blog-card h2 { font-size: 15px !important; }
-
-  /* ── Soundbar ── */
-  .soundbar { display: none !important; }
+  /* ── 11. Loader pacman ── */
+  .loader-active { display: none !important; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -233,45 +242,39 @@
    ══════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
 
-  /* Sidebar nav — icônes seulement, plus compactes */
-  .nav-bar nav a { padding: 0 7px !important; font-size: 16px !important; }
-  .nav-bar ul li a { padding: 0 6px !important; font-size: 14px !important; }
+  /* Sidebar encore plus compact */
+  .nav-bar nav a { padding: 0 7px !important; font-size: 15px !important; }
+  .nav-bar ul li a { padding: 0 5px !important; font-size: 13px !important; }
+  .nav-bar ul .theme-btn { padding: 0 5px !important; }
+
+  /* Container */
+  .container { padding: 0 12px 80px !important; }
+
+  /* text-zone */
+  .container .text-zone { padding: 22px 0 0 !important; }
+  .container .text-zone h1 { font-size: 28px !important; }
 
   /* Certificats → 1 colonne */
-  .certificates-wrap {
-    grid-template-columns: 1fr !important;
-  }
+  .certificates-wrap { grid-template-columns: 1fr !important; }
 
   /* Contact form → 1 colonne */
-  .contact-form .form-row {
-    grid-template-columns: 1fr !important;
-  }
+  .contact-form .form-row { grid-template-columns: 1fr !important; }
 
-  /* Home title */
-  .home-page h1 {
-    font-size: clamp(24px, 7vw, 36px) !important;
-    line-height: 1.25 !important;
-  }
+  /* Home */
+  .home-page h1 { font-size: clamp(22px, 7vw, 32px) !important; }
+  .home-page .home-stats { gap: 10px !important; }
+  .home-page .home-stats .stat-number { font-size: 20px !important; }
+  .home-page .home-stats .stat-label  { font-size: 7px !important; }
 
-  .home-page .home-stats {
-    gap: 12px !important;
-    .stat-number { font-size: 22px !important; }
-    .stat-label  { font-size: 7px !important; }
-  }
+  /* Tagcloud */
+  .tagcloud-wrap { height: 260px !important; }
 
-  /* Skills text zone */
-  .container.skills-page .text-zone {
-    padding-top: 40px !important;
-    p { font-size: 13px !important; }
-  }
+  /* Services */
+  .service-card { flex-direction: column !important; gap: 8px !important; }
+  .service-card .service-content h2 { font-size: 14px !important; }
+  .service-card .service-content p  { font-size: 12px !important; }
 
-  /* Services card */
-  .service-card { padding: 12px !important; }
-  .service-card .service-content h2 { font-size: 13px !important; }
-
-  /* Blog card */
-  .blog-card { padding: 14px 16px !important; }
-
-  /* Cert card */
-  .cert-card h2 { font-size: 15px !important; }
+  /* Blog */
+  .blog-card h2 { font-size: 15px !important; }
+  .blog-card .blog-excerpt { font-size: 12px !important; }
 }
