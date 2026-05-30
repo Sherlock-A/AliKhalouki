@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Ali Khalouki — Développeur Web Freelance au Maroc. Création de sites internet, SEO, applications web full-stack." />
+    <meta name="description" content="Ali Khalouki — Développeur Web Freelance à Fès, Maroc. Création de sites internet sur mesure, SEO, applications React &amp; Laravel. Devis gratuit, livraison rapide." />
     <meta name="author" content="Ali Khalouki" />
-    <meta name="keywords" content="développeur web freelance maroc, création site web, full stack, react, laravel, fès" />
+    <meta name="keywords" content="développeur web freelance maroc, développeur web fès, création site web maroc, site internet maroc prix, freelance react maroc, développeur laravel maroc, agence web fès maroc, création site vitrine maroc, référencement seo maroc, application web sur mesure maroc, développeur full stack maroc, devis site web maroc gratuit" />
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="MA-05" />
+    <meta name="geo.placename" content="Fès, Maroc" />
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website" />
@@ -30,30 +33,75 @@
     <meta name="twitter:creator" content="@ali_khalouki" />
     <meta name="theme-color" content="#0E1116" />
 
-    <!-- JSON-LD — Person + LocalBusiness -->
+    <!-- JSON-LD — Person + LocalBusiness + Services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Person", "LocalBusiness"],
+      "@type": ["Person", "ProfessionalService"],
       "name": "Ali Khalouki",
-      "jobTitle": "Développeur Web Freelance",
-      "description": "Développeur Web Freelance Full Stack basé à Fès, Maroc. Spécialisé React, Laravel, Node.js, Docker, SEO.",
+      "jobTitle": "Développeur Web Freelance Full Stack",
+      "description": "Développeur Web Freelance Full Stack basé à Fès, Maroc. Spécialisé React, Laravel, Node.js, Docker et SEO. Création de sites internet sur mesure, applications web, référencement naturel. Devis gratuit.",
       "url": "https://ali-khalouki.com",
       "image": "https://ali-khalouki.com/ali-photo.png",
       "email": "okhalouki46@gmail.com",
       "telephone": "+212771747509",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Fès",
         "addressLocality": "Fès",
+        "addressRegion": "Fès-Meknès",
         "addressCountry": "MA"
       },
-      "areaServed": ["Maroc", "France", "International"],
+      "areaServed": [
+        { "@type": "Country", "name": "Maroc" },
+        { "@type": "Country", "name": "France" },
+        { "@type": "City", "name": "Fès" },
+        { "@type": "City", "name": "Casablanca" },
+        { "@type": "City", "name": "Rabat" }
+      ],
       "priceRange": "300€ – 5000€",
-      "knowsAbout": ["React", "Next.js", "Laravel", "Node.js", "Docker", "SEO", "DevOps"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Web",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création Site Internet Sur Mesure" }, "priceSpecification": { "@type": "PriceSpecification", "price": "300", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Référencement Naturel SEO Maroc" }, "priceSpecification": { "@type": "PriceSpecification", "price": "150", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application Web React Laravel" }, "priceSpecification": { "@type": "PriceSpecification", "price": "800", "priceCurrency": "EUR" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance & Optimisation Site Web" }, "priceSpecification": { "@type": "PriceSpecification", "price": "80", "priceCurrency": "EUR" } }
+        ]
+      },
+      "knowsAbout": ["React", "Next.js", "Laravel", "Node.js", "Docker", "CI/CD", "SEO", "DevOps", "MySQL", "MongoDB"],
+      "knowsLanguage": ["fr", "ar", "en"],
       "sameAs": [
         "https://www.linkedin.com/in/ali-khalouki-114975253/",
         "https://instagram.com/sherlock15_",
-        "https://wa.me/212771747509"
+        "https://wa.me/212771747509",
+        "https://github.com/Sherlock-A"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD — FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte la création d'un site web au Maroc ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Le prix d'un site web au Maroc varie selon le type de projet : site vitrine à partir de 300€, e-commerce à partir de 800€, application web sur mesure à partir de 1500€. Contactez-moi pour un devis gratuit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels technologies utilisez-vous pour créer des sites web ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "J'utilise React, Next.js, Laravel, Node.js pour le développement, et Docker/CI-CD pour le déploiement. Pour les sites vitrines, WordPress avec Elementor est également disponible." }
+        },
+        {
+          "@type": "Question",
+          "name": "Proposez-vous le référencement SEO au Maroc ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Oui, je propose des services SEO complets : audit technique, optimisation des mots-clés, création de contenu optimisé, et suivi des positions sur Google.ma et Google.com." }
+        }
       ]
     }
     </script>

@@ -109,8 +109,8 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Contact"
-        description="Contactez Ali Khalouki pour votre projet web au Maroc. Réponse sous 24h. Devis gratuit pour création de site, SEO ou application web."
+        title="Contact — Devis Gratuit"
+        description="Demandez votre devis gratuit pour création de site web, SEO ou application au Maroc. Ali Khalouki répond sous 24h. WhatsApp : +212 771 747 509."
         path="/contact"
       />
       <div className="container contact-page">

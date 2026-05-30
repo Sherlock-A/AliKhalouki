@@ -42,8 +42,8 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Services"
-        description="Création sites web, SEO, maintenance, applications React/Laravel au Maroc. Devis gratuit. Tarifs à partir de 300€."
+        title="Services — Création Site Web Maroc"
+        description="Création site web Maroc dès 300€, SEO dès 150€, application web dès 800€. Développeur freelance à Fès. Devis gratuit, livraison rapide, code propre."
         path="/services"
       />
       <div className="container services-page">
