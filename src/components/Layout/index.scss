@@ -79,27 +79,10 @@
   75%       { transform: translate(20px, 15px) scale(1.02); }
 }
 
-/* Mobile — orbes plus petits */
+/* Mobile — orbes masquées (à améliorer) */
 @media (max-width: 768px) {
-  .page::before {
-    width: 260px;
-    height: 260px;
-    top: -60px;
-    right: -30px;
-  }
-  .page::after {
-    width: 180px;
-    height: 180px;
-    bottom: 80px;
-    left: -20px;
-  }
-  .App::before {
-    width: 140px;
-    height: 140px;
-    top: 35%;
-    right: 5%;
-  }
-  .App::after { display: none; }
+  .page::before, .page::after,
+  .App::before, .App::after { display: none; }
 }
 
 .top-tags {
