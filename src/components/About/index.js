@@ -23,7 +23,7 @@ const About = () => {
     <>
       <SEO
         title="À Propos"
-        description="Basé à Fès, Ali Khalouki est développeur web full-stack avec 3 ans d'expérience. React, Laravel, Node.js, DevOps. Découvrez son parcours."
+        description="Basé à Casablanca, Ali Khalouki est développeur web full-stack avec 3 ans d'expérience. React, Laravel, Node.js, DevOps. Découvrez son parcours."
         path="/about"
       />
       <div className="container about-page">
@@ -58,7 +58,7 @@ const About = () => {
 
           <div className="photo-meta">
             <span className="photo-name">Ali Khalouki</span>
-            <span className="photo-loc">Fès, Maroc</span>
+            <span className="photo-loc">Casablanca, Maroc</span>
           </div>
         </div>
       </div>
