@@ -17,6 +17,13 @@ import './index.scss'
 
 const projects = [
   {
+    title: 'Portfolio Personnel',
+    url: 'https://alikhalouki.vercel.app',
+    descKey: "Portfolio interactif full-stack avec animations CSS/GSAP, thème clair/sombre, i18n 4 langues (FR/EN/ES/DE), formulaire EmailJS, carte Leaflet et déploiement CI/CD sur Vercel.",
+    tags: ['React', 'SCSS', 'EmailJS', 'Leaflet', 'FontAwesome', 'i18n', 'Vercel', 'GitHub Actions', 'React Router', 'Animate.css'],
+    badge: null,
+  },
+  {
     title: 'Cadex',
     url: null,
     descKey: 'Site corporate WordPress/Elementor pour Cadex, Casablanca. Animations GSAP, SEO Yoast, CDN Cloudflare, performance LiteSpeed.',
