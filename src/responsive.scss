@@ -379,6 +379,9 @@
     z-index: 50 !important;
   }
 
+  /* Langues cachées en haut sur mobile — disponibles dans la barre du bas */
+  .tc-langs, .tc-sep:first-of-type { display: none !important; }
+
   /* ── 9. Scroll progress + back-to-top ── */
   .scroll-progress { display: none !important; }
   .back-to-top { bottom: 76px !important; right: 12px !important; }
