@@ -94,12 +94,13 @@
       align-items: center !important;
       width: auto !important;
       order: 1 !important;
+      flex: 1 !important;
 
       a {
         font-size: 20px !important;
         height: 64px !important;
         line-height: 64px !important;
-        padding: 0 10px !important;
+        padding: 0 8px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -120,6 +121,9 @@
       padding: 0 !important;
       margin: 0 !important;
       order: 2 !important;
+      flex-shrink: 0 !important;
+      border-left: 1px solid rgba(6,182,212,0.2) !important;
+      padding-left: 4px !important;
 
       li { margin: 0 !important; }
 
