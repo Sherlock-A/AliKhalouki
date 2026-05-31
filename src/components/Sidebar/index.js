@@ -13,11 +13,19 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
 
+import { LANGS, useI18n } from '../../i18n'
 import { useTheme } from '../../theme'
 import AkMark from '../AkMark'
+import { FlagDE, FlagES, FlagFR, FlagGB } from '../AkMark/FlagIcon'
+
+const FLAGS = { fr: FlagFR, en: FlagGB, es: FlagES, de: FlagDE }
 
 const Sidebar = () => {
   const { theme } = useTheme()
+  const { lang, changeLang } = useI18n()
+
+  const nextLang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]
+  const ActiveFlag = FLAGS[lang]
 
   return (
     <div className="nav-bar">
@@ -53,6 +61,11 @@ const Sidebar = () => {
       </nav>
 
       <ul>
+        <li className="mob-lang">
+          <button className="mob-lang-btn" onClick={() => changeLang(nextLang)} title={nextLang.toUpperCase()}>
+            <ActiveFlag />
+          </button>
+        </li>
         <li>
           <a href="https://wa.me/212771747509" target="_blank" rel="noreferrer" title="WhatsApp">
             <FontAwesomeIcon icon={faWhatsapp} color="#25D366" />

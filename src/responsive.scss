@@ -122,8 +122,6 @@
       margin: 0 !important;
       order: 2 !important;
       flex-shrink: 0 !important;
-      border-left: 1px solid rgba(6,182,212,0.2) !important;
-      padding-left: 4px !important;
 
       li { margin: 0 !important; }
 
@@ -359,6 +357,19 @@
 
   .home-page .logo-ring       { width: 96px  !important; height: 96px  !important; }
   .home-page .logo-ring-outer { width: 112px !important; height: 112px !important; }
+
+  /* ── Bouton langue cyclique mobile ── */
+  .mob-lang {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 6px !important;
+  }
+
+  /* Mode clair */
+  [data-theme="light"] .mob-lang-btn {
+    border-color: rgba(37,99,235,0.35) !important;
+    &:hover { border-color: #2563EB !important; }
+  }
 
   /* ── 8. TopControls ── */
   .top-controls-wrap {
