@@ -110,7 +110,7 @@ const Contact = () => {
     <>
       <SEO
         title="Contact — Devis Gratuit"
-        description="Demandez votre devis gratuit pour création de site web, SEO ou application au Maroc. Ali Khalouki répond sous 24h. WhatsApp : +212 771 747 509."
+        description="Demandez votre devis gratuit pour création de site web, SEO ou application à Casablanca, Maroc. Ali Khalouki répond sous 24h. WhatsApp : +212 771 747 509."
         path="/contact"
       />
       <div className="container contact-page">
@@ -224,9 +224,9 @@ const Contact = () => {
 
               {/* Carte mobile — visible uniquement sur mobile, après ENVOYER */}
               <div className="map-mobile">
-                <MapContainer center={[33.9985, -4.9761]} zoom={12}>
+                <MapContainer center={[33.5731, -7.5898]} zoom={12}>
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <Marker position={[33.9985, -4.9761]}>
+                  <Marker position={[33.5731, -7.5898]}>
                     <Popup>{t('contact.popup')}</Popup>
                   </Marker>
                 </MapContainer>
@@ -241,7 +241,7 @@ const Contact = () => {
           <div className="info-map">
             <div className="info-name">Ali Khalouki</div>
             <div className="info-location">
-              <FontAwesomeIcon icon={faLocationDot} /> Fès, Maroc
+              <FontAwesomeIcon icon={faLocationDot} /> Casablanca, Maroc
             </div>
             <div className="info-socials">
               <a href="https://wa.me/212771747509" target="_blank" rel="noreferrer" className="social-pill social-pill--wa">
@@ -255,9 +255,9 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <MapContainer center={[33.9985, -4.9761]} zoom={13}>
+          <MapContainer center={[33.5731, -7.5898]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[33.9985, -4.9761]}>
+            <Marker position={[33.5731, -7.5898]}>
               <Popup>{t('contact.popup')}</Popup>
             </Marker>
           </MapContainer>

@@ -16,7 +16,7 @@ const translations = {
     about: {
       title: 'À Propos',
       tagline: 'Développeur Web Freelance au Maroc',
-      p1: "Basé à Fès, je conçois des sites internet sur mesure, des applications full-stack et des systèmes back-end robustes pour entreprises et entrepreneurs. Fort d'une expérience chez Cadex (Casablanca) et High Farming (Fès), je transforme vos idées en solutions concrètes — de la maquette au déploiement.",
+      p1: "Basé à Casablanca, je conçois des sites internet sur mesure, des applications full-stack et des systèmes back-end robustes pour entreprises et entrepreneurs. Fort d'une expérience chez Cadex (Casablanca) et High Farming (Fès), je transforme vos idées en solutions concrètes — de la maquette au déploiement.",
       p2: "Site vitrine, refonte, application sur mesure ou audit SEO : design soigné, code propre, performances optimisées. Devis gratuit, délais respectés, communication directe.",
     },
     skills: {
@@ -134,7 +134,7 @@ const translations = {
     about: {
       title: 'About Me',
       tagline: 'Freelance Web Developer in Morocco',
-      p1: 'Based in Fez, I design custom websites, full-stack applications and robust back-end systems for businesses and entrepreneurs. With hands-on experience at Cadex (Casablanca) and High Farming (Fez), I turn your ideas into concrete solutions — from wireframe to deployment.',
+      p1: 'Based in Casablanca, I design custom websites, full-stack applications and robust back-end systems for businesses and entrepreneurs. With hands-on experience at Cadex (Casablanca) and High Farming (Fez), I turn your ideas into concrete solutions — from wireframe to deployment.',
       p2: 'Landing page, redesign, custom app or SEO audit: polished design, clean code, optimized performance. Free quote, on-time delivery, direct communication.',
     },
     skills: {
@@ -252,7 +252,7 @@ const translations = {
     about: {
       title: 'Sobre Mí',
       tagline: 'Desarrollador Web Freelance en Marruecos',
-      p1: 'Con base en Fez, diseño sitios web a medida, aplicaciones full-stack y sistemas back-end robustos para empresas y emprendedores. Con experiencia en Cadex (Casablanca) y High Farming (Fez), transformo tus ideas en soluciones concretas — del boceto al despliegue.',
+      p1: 'Con base en Casablanca, diseño sitios web a medida, aplicaciones full-stack y sistemas back-end robustos para empresas y emprendedores. Con experiencia en Cadex (Casablanca) y High Farming (Fez), transformo tus ideas en soluciones concretas — del boceto al despliegue.',
       p2: 'Sitio vitrina, rediseño, aplicación a medida o auditoría SEO: diseño cuidado, código limpio, rendimiento optimizado. Presupuesto gratis, plazos respetados, comunicación directa.',
     },
     skills: {
@@ -370,7 +370,7 @@ const translations = {
     about: {
       title: 'Über Mich',
       tagline: 'Freelance Webentwickler in Marokko',
-      p1: 'Ansässig in Fez, entwerfe ich maßgeschneiderte Websites, Full-Stack-Anwendungen und robuste Backend-Systeme für Unternehmen und Unternehmer. Mit Praxiserfahrung bei Cadex (Casablanca) und High Farming (Fez) verwandle ich Ihre Ideen in konkrete Lösungen — vom Wireframe bis zum Deployment.',
+      p1: 'Ansässig in Casablanca, entwerfe ich maßgeschneiderte Websites, Full-Stack-Anwendungen und robuste Backend-Systeme für Unternehmen und Unternehmer. Mit Praxiserfahrung bei Cadex (Casablanca) und High Farming (Fez) verwandle ich Ihre Ideen in konkrete Lösungen — vom Wireframe bis zum Deployment.',
       p2: 'Unternehmenswebsite, Redesign, Anwendung oder SEO-Audit: sorgfältiges Design, sauberer Code, optimierte Leistung. Kostenloses Angebot, pünktliche Lieferung, direkte Kommunikation.',
     },
     skills: {

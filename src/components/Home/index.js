@@ -59,7 +59,7 @@ const Home = () => {
     <>
       <SEO
         title="Développeur Web Freelance Maroc"
-        description="Ali Khalouki — Développeur Web Freelance à Fès, Maroc. Création sites internet sur mesure, SEO, apps React &amp; Laravel. +10 projets livrés. Devis gratuit sous 24h."
+        description="Ali Khalouki — Développeur Web Freelance à Casablanca, Maroc. Création sites internet sur mesure, SEO, apps React &amp; Laravel. +10 projets livrés. Devis gratuit sous 24h."
         path="/"
       />
       <div className="container home-page">
