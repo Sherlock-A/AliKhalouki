@@ -7,7 +7,10 @@
   flex-direction: column;
   gap: 12px;
   padding: 5% 20px 20px 10px;
-  overflow-y: auto;
+  overflow-y: scroll;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(6,182,212,0.25) transparent;
 }
 
 .blog-card {

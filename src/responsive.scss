@@ -29,7 +29,7 @@
   .container.contact-page .text-zone { width: 44% !important; }
 
   .home-page .text-zone { width: 60% !important; }
-  .home-page .text-zone h1 { font-size: clamp(36px, 4.2vw, 58px) !important; white-space: normal !important; }
+  .home-page .text-zone h1 { font-size: clamp(32px, 3.8vw, 50px) !important; }
 
   .logo-container { width: 38% !important; right: 1% !important; }
 
@@ -384,10 +384,12 @@
   .home-page .logo-container {
     display: flex !important;
     position: relative !important;
+    top: auto !important;
+    right: auto !important;
     left: auto !important;
     bottom: auto !important;
     transform: none !important;
-    margin: 16px auto 0 !important;
+    margin: 16px auto 10px !important;
     order: 2 !important;
     width: 140px !important;
     height: 140px !important;
