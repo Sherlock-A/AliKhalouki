@@ -37,6 +37,25 @@ textarea {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+/* ── Shared availability dot/text (Home + Contact) ─────────── */
+.avail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 6px rgba(37,211,102,0.6);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.avail-text {
+  font-size: 10px;
+  font-family: 'Courier New', monospace;
+  color: #25D366;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .loader-hidden {
   display: none;
 }

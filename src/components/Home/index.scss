@@ -93,6 +93,51 @@
     }
   }
 
+  .home-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 10px 0 6px;
+    opacity: 0;
+    animation: fadeInUp 0.6s 2.4s forwards;
+  }
+
+  .trusted-by {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 4px 0 14px;
+    opacity: 0;
+    animation: fadeInUp 0.6s 2.6s forwards;
+
+    .trusted-label {
+      font-size: 9px;
+      font-family: 'Courier New', monospace;
+      color: #4e5a68;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-right: 2px;
+    }
+
+    .client-badge {
+      font-size: 9px;
+      font-family: 'Courier New', monospace;
+      color: #8a93a0;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(6,182,212,0.3);
+      border-radius: 4px;
+      padding: 2px 8px;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+
+      &:hover {
+        border-color: #06B6D4;
+        color: #06B6D4;
+      }
+    }
+  }
+
   .flat-button {
     color: #06B6D4;
     font-size: 13px;

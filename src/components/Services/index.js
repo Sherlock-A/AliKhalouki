@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 
 import {
+  faChevronDown,
   faChevronLeft,
   faChevronRight,
+  faChevronUp,
   faCode,
   faDatabase,
   faMagnifyingGlass,
@@ -35,9 +37,12 @@ const Services = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
   const [page, setPage] = useState(0)
+  const [faqOpen, setFaqOpen] = useState(null)
 
   const items = t('services.items')
   const steps = t('services.steps')
+  const faq   = t('services.faq')
+  const banner = t('services.quoteBanner')
   const totalPages = Math.ceil(items.length / PAGE_SIZE)
   const visible = items.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
 
@@ -139,6 +144,31 @@ const Services = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="faq-section">
+            {faq.map((item, i) => (
+              <div key={i} className={`faq-item${faqOpen === i ? ' faq-item--open' : ''}`}>
+                <button
+                  className="faq-q"
+                  onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                >
+                  <span>{item.q}</span>
+                  <FontAwesomeIcon icon={faqOpen === i ? faChevronUp : faChevronDown} className="faq-chevron" />
+                </button>
+                <div className="faq-a">
+                  <p>{item.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bannière devis */}
+          <div className="quote-banner">
+            <p className="qb-headline">{banner.headline}</p>
+            <p className="qb-sub">{banner.sub}</p>
+            <Link to="/contact" className="qb-cta">{banner.cta}</Link>
           </div>
         </div>
       </div>

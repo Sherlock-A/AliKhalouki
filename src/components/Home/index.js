@@ -105,6 +105,18 @@ const Home = () => {
             ))}
           </div>
 
+          <div className="home-availability">
+            <span className="avail-dot" />
+            <span className="avail-text">{t('home.available')}</span>
+          </div>
+
+          <div className="trusted-by">
+            <span className="trusted-label">{t('home.trustedBy')} :</span>
+            <span className="client-badge">Cadex</span>
+            <span className="client-badge">Jobly</span>
+            <span className="client-badge">Bait El Khalil</span>
+          </div>
+
           <Link to="/contact" className="flat-button">
             {t('home.cta')}
           </Link>

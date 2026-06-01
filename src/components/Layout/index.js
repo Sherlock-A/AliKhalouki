@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import BackToTop from '../BackToTop'
 import ScrollProgress from '../ScrollProgress'
 import Sidebar from '../Sidebar/'
+import WhatsAppButton from '../WhatsAppButton'
 import './index.scss'
 
 const Layout = () => {
@@ -24,6 +25,7 @@ const Layout = () => {
         </span>
       </div>
       <BackToTop />
+      <WhatsAppButton />
     </div>
   )
 }
