@@ -8,6 +8,7 @@ const translations = {
       cta: 'DÉMARRONS VOTRE PROJET',
       available: 'Disponible — démarrage projet cette semaine',
       trustedBy: 'Ils m\'ont fait confiance',
+      trust: ['Réponse sous 24h', 'Devis gratuit', 'Maroc & Europe', 'Accompagnement complet'],
       stats: {
         projects: 'Projets livrés',
         experience: 'Ans d\'exp.',
@@ -49,6 +50,11 @@ const translations = {
           title: 'Création de Sites Internet Sur Mesure',
           desc: "Votre site est votre commercial 24h/24. Je crée des sites qui inspirent confiance au premier regard, chargent en moins de 2 secondes et transforment les visiteurs en contacts qualifiés — qu'il s'agisse d'une landing page ou d'un site complet.",
           price: 'Dès 300€',
+          tiers: [
+            { name: 'Essentiel', price: '300€', features: ['5 pages', 'Design sur mesure', 'Mobile-first', 'SEO de base'] },
+            { name: 'Pro', price: '600€', featured: true, badge: 'Le plus choisi', features: ['10 pages', 'Animations', 'Blog intégré', 'SEO avancé', 'EmailJS'] },
+            { name: 'Enterprise', price: 'Sur devis', features: ['Pages illimitées', 'E-commerce', 'Back-office', 'DevOps inclus', 'Support prioritaire'] },
+          ],
         },
         {
           title: 'Référencement Naturel & SEO',
@@ -146,6 +152,7 @@ const translations = {
       cta: 'START MY PROJECT',
       available: 'Available now — can start this week',
       trustedBy: 'Trusted by',
+      trust: ['Response in 24h', 'Free quote', 'Morocco & Europe', 'Full support'],
       stats: {
         projects: 'Projects delivered',
         experience: 'Yrs Exp.',
@@ -187,6 +194,11 @@ const translations = {
           title: 'Custom Website Development',
           desc: 'Your website is your 24/7 salesperson. I build sites that inspire trust at first glance, load in under 2 seconds, and turn visitors into qualified leads — whether it\'s a landing page or a full site.',
           price: 'From €300',
+          tiers: [
+            { name: 'Essential', price: '€300', features: ['5 pages', 'Custom design', 'Mobile-first', 'Basic SEO'] },
+            { name: 'Pro', price: '€600', featured: true, badge: 'Most popular', features: ['10 pages', 'Animations', 'Blog', 'Advanced SEO', 'EmailJS'] },
+            { name: 'Enterprise', price: 'On request', features: ['Unlimited pages', 'E-commerce', 'Back-office', 'DevOps included', 'Priority support'] },
+          ],
         },
         {
           title: 'SEO & Natural Referencing',
@@ -284,6 +296,7 @@ const translations = {
       cta: 'EMPEZAR MI PROYECTO',
       available: 'Disponible ahora — puedo empezar esta semana',
       trustedBy: 'Confiaron en mí',
+      trust: ['Respuesta en 24h', 'Presupuesto gratis', 'Marruecos y Europa', 'Acompañamiento completo'],
       stats: {
         projects: 'Proyectos entregados',
         experience: 'Años Exp.',
@@ -325,6 +338,11 @@ const translations = {
           title: 'Creación de Sitios Web a Medida',
           desc: 'Tu sitio es tu vendedor 24h/24. Creo sitios que inspiran confianza a primera vista, cargan en menos de 2 segundos y convierten visitantes en contactos cualificados — ya sea una landing page o un sitio completo.',
           price: 'Desde €300',
+          tiers: [
+            { name: 'Esencial', price: '€300', features: ['5 páginas', 'Diseño a medida', 'Mobile-first', 'SEO básico'] },
+            { name: 'Pro', price: '€600', featured: true, badge: 'El más elegido', features: ['10 páginas', 'Animaciones', 'Blog', 'SEO avanzado', 'EmailJS'] },
+            { name: 'Enterprise', price: 'A consultar', features: ['Páginas ilimitadas', 'E-commerce', 'Back-office', 'DevOps incluido', 'Soporte prioritario'] },
+          ],
         },
         {
           title: 'SEO & Posicionamiento Natural',
@@ -422,6 +440,7 @@ const translations = {
       cta: 'MEIN PROJEKT STARTEN',
       available: 'Verfügbar — Projektstart diese Woche möglich',
       trustedBy: 'Vertrauen mir',
+      trust: ['Antwort in 24h', 'Kostenloses Angebot', 'Marokko & Europa', 'Vollständige Begleitung'],
       stats: {
         projects: 'Projekte geliefert',
         experience: 'Jahre Erf.',
@@ -463,6 +482,11 @@ const translations = {
           title: 'Maßgeschneiderte Website-Entwicklung',
           desc: 'Ihre Website ist Ihr 24/7-Verkäufer. Ich baue Websites, die auf den ersten Blick Vertrauen erwecken, in unter 2 Sekunden laden und Besucher in qualifizierte Leads verwandeln — ob Landing Page oder vollständige Website.',
           price: 'Ab €300',
+          tiers: [
+            { name: 'Basis', price: '€300', features: ['5 Seiten', 'Individuelles Design', 'Mobile-first', 'Basis-SEO'] },
+            { name: 'Pro', price: '€600', featured: true, badge: 'Beliebteste Wahl', features: ['10 Seiten', 'Animationen', 'Blog', 'Erweitertes SEO', 'EmailJS'] },
+            { name: 'Enterprise', price: 'Auf Anfrage', features: ['Unbegrenzte Seiten', 'E-Commerce', 'Back-Office', 'DevOps inklusive', 'Prioritätssupport'] },
+          ],
         },
         {
           title: 'SEO & Suchmaschinenoptimierung',

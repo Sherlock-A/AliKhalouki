@@ -95,11 +95,25 @@ const Services = () => {
                   <div className="service-content">
                     <div className="service-head">
                       <h2>{service.title}</h2>
-                      {service.price && (
+                      {!service.tiers && service.price && (
                         <span className="service-price">{service.price}</span>
                       )}
                     </div>
                     <p>{service.desc}</p>
+                    {service.tiers && (
+                      <div className="service-tiers">
+                        {service.tiers.map(tier => (
+                          <div key={tier.name} className={`tier-card${tier.featured ? ' tier-card--featured' : ''}`}>
+                            {tier.badge && <span className="tier-badge">{tier.badge}</span>}
+                            <span className="tier-name">{tier.name}</span>
+                            <span className="tier-price">{tier.price}</span>
+                            <ul className="tier-features">
+                              {tier.features.map(f => <li key={f}>{f}</li>)}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <div className="service-tech">
                       {TECH_STACKS[globalIndex].map((tag) => (
                         <span key={tag} className="tech-tag">{tag}</span>

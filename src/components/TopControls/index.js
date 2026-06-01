@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 
 import {
+  faGlobe,
   faMoon,
   faSun,
 } from '@fortawesome/free-solid-svg-icons'
@@ -37,6 +38,7 @@ const TopControls = () => {
   const { lang, changeLang } = useI18n()
   const { theme, toggleTheme } = useTheme()
   const [playing, setPlaying] = useState(false)
+  const [langDrawerOpen, setLangDrawerOpen] = useState(false)
   const audioRef = useRef(null)
 
   const handleMusic = () => {
@@ -65,6 +67,28 @@ const TopControls = () => {
           )
         })}
       </div>
+
+      {/* Globe langue — mobile only */}
+      <button className="tc-globe" onClick={() => setLangDrawerOpen(o => !o)} title="Langue">
+        <FontAwesomeIcon icon={faGlobe} />
+      </button>
+      {langDrawerOpen && (
+        <div className="lang-drawer">
+          {LANGS.map(l => {
+            const Flag = FLAGS[l]
+            return (
+              <button
+                key={l}
+                className={`lang-drawer-btn${lang === l ? ' lang-drawer-btn--active' : ''}`}
+                onClick={() => { changeLang(l); setLangDrawerOpen(false) }}
+              >
+                <Flag />
+                <span>{l.toUpperCase()}</span>
+              </button>
+            )
+          })}
+        </div>
+      )}
 
       {/* Divider */}
       <span className="tc-sep" />

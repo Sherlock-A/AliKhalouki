@@ -8,8 +8,8 @@
 
     h1 {
       color: #fff;
-      font-size: clamp(36px, 3.6vw, 54px);
-      line-height: 1.18;
+      font-size: clamp(42px, 4.5vw, 72px);
+      line-height: 1.15;
       margin: 0;
       font-family: 'Coolvetica';
       font-weight: 400;
@@ -135,6 +135,30 @@
         border-color: #06B6D4;
         color: #06B6D4;
       }
+    }
+  }
+
+  .trust-builders {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 4px 0 14px;
+    opacity: 0;
+    animation: fadeInUp 0.6s 2.8s forwards;
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-family: 'Courier New', monospace;
+      color: #8a93a0;
+    }
+
+    .trust-check {
+      color: #25D366;
+      font-size: 11px;
+      font-weight: 700;
     }
   }
 

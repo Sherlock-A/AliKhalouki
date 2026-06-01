@@ -1,14 +1,17 @@
+import { useState } from 'react'
 import './index.scss'
 import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import {
   faAward,
   faBriefcase,
+  faEllipsis,
   faEnvelope,
   faFolder,
   faHome,
   faNewspaper,
   faScrewdriverWrench,
   faUser,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link, NavLink } from 'react-router-dom'
@@ -23,6 +26,7 @@ const FLAGS = { fr: FlagFR, en: FlagGB, es: FlagES, de: FlagDE }
 const Sidebar = () => {
   const { theme } = useTheme()
   const { lang, changeLang } = useI18n()
+  const [moreOpen, setMoreOpen] = useState(false)
 
   const nextLang = LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]
   const ActiveFlag = FLAGS[lang]
@@ -34,6 +38,7 @@ const Sidebar = () => {
       </Link>
 
       <nav>
+        {/* Liens primaires — toujours visibles */}
         <NavLink exact="true" activeclassname="active" to="/">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
@@ -46,19 +51,48 @@ const Sidebar = () => {
         <NavLink activeclassname="active" className="projects-link" to="/projects">
           <FontAwesomeIcon icon={faFolder} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="certificates-link" to="/certificates">
-          <FontAwesomeIcon icon={faAward} color="#4d4d4e" />
-        </NavLink>
-        <NavLink activeclassname="active" className="blog-link" to="/blog">
-          <FontAwesomeIcon icon={faNewspaper} color="#4d4d4e" />
-        </NavLink>
-        <NavLink activeclassname="active" className="skills-link" to="/skills">
-          <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
-        </NavLink>
         <NavLink activeclassname="active" className="contact-link" to="/contact">
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
+
+        {/* Liens secondaires — masqués sur mobile, visibles sur desktop */}
+        <NavLink activeclassname="active" className="certificates-link nav-secondary" to="/certificates">
+          <FontAwesomeIcon icon={faAward} color="#4d4d4e" />
+        </NavLink>
+        <NavLink activeclassname="active" className="blog-link nav-secondary" to="/blog">
+          <FontAwesomeIcon icon={faNewspaper} color="#4d4d4e" />
+        </NavLink>
+        <NavLink activeclassname="active" className="skills-link nav-secondary" to="/skills">
+          <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
+        </NavLink>
+
+        {/* Bouton "Plus" — visible uniquement sur mobile */}
+        <button
+          className="more-btn"
+          onClick={() => setMoreOpen(o => !o)}
+          aria-label="Plus"
+        >
+          <FontAwesomeIcon icon={moreOpen ? faXmark : faEllipsis} />
+        </button>
       </nav>
+
+      {/* Drawer secondaire mobile */}
+      {moreOpen && (
+        <div className="more-drawer">
+          <NavLink activeclassname="active" className="certificates-link" to="/certificates" onClick={() => setMoreOpen(false)}>
+            <FontAwesomeIcon icon={faAward} />
+            <span>Certifs</span>
+          </NavLink>
+          <NavLink activeclassname="active" className="blog-link" to="/blog" onClick={() => setMoreOpen(false)}>
+            <FontAwesomeIcon icon={faNewspaper} />
+            <span>Blog</span>
+          </NavLink>
+          <NavLink activeclassname="active" className="skills-link" to="/skills" onClick={() => setMoreOpen(false)}>
+            <FontAwesomeIcon icon={faScrewdriverWrench} />
+            <span>Skills</span>
+          </NavLink>
+        </div>
+      )}
 
       <ul>
         <li className="mob-lang">

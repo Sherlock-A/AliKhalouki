@@ -117,6 +117,15 @@ const Home = () => {
             <span className="client-badge">Bait El Khalil</span>
           </div>
 
+          <div className="trust-builders">
+            {t('home.trust').map((item, i) => (
+              <div key={i} className="trust-item">
+                <span className="trust-check">✓</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+
           <Link to="/contact" className="flat-button">
             {t('home.cta')}
           </Link>
