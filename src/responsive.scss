@@ -350,28 +350,29 @@
     }
   }
 
-  /* ── Home — flex column, logo après le CTA ── */
+  /* ── Home — hauteur fixe, logo en bas absolu ── */
   .container.home-page,
   .home-page {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    min-height: calc(100svh - 64px) !important;
-    overflow: visible !important;
-    padding-bottom: 20px !important;
+    display: block !important;
+    height: calc(100svh - 64px) !important;
+    min-height: unset !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
   }
 
-  /* ── 6. Home text-zone — flow normal ── */
+  /* ── 6. Home text-zone — absolu en haut ── */
   .home-page {
     .text-zone {
-      position: relative !important;
-      left: auto !important;
-      top: auto !important;
-      width: 100% !important;
-      padding: 66px 16px 0 !important;
+      position: absolute !important;
+      left: 5% !important;
+      top: 6% !important;
+      width: 88% !important;
       transform: none !important;
-      order: 1 !important;
+      padding: 0 !important;
     }
+
+    /* trust-builders caché sur mobile — trop de hauteur */
+    .trust-builders { display: none !important; }
 
     h1 { white-space: normal !important; font-size: clamp(28px, 7.5vw, 44px) !important; word-break: keep-all !important; }
     h2 { white-space: normal !important; font-size: 10px !important; letter-spacing: 1.5px !important; }
@@ -380,26 +381,24 @@
   /* ── 7. Éléments masqués sur mobile ── */
   .tags, .top-tags, .logo-container, .soundbar { display: none !important; }
 
-  /* Logo AK — flux naturel après le CTA (order: 2) */
+  /* Logo AK — positionné en bas du conteneur, centré, séparé du bouton */
   .home-page .logo-container {
     display: flex !important;
-    position: relative !important;
+    position: absolute !important;
     top: auto !important;
     right: auto !important;
-    left: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin: 16px auto 10px !important;
-    order: 2 !important;
-    width: 140px !important;
-    height: 140px !important;
-    opacity: 0.85 !important;
-    animation: fadeIn 1s ease 0.5s both !important;
-    flex-shrink: 0 !important;
+    left: 50% !important;
+    bottom: 12px !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    width: 120px !important;
+    height: 120px !important;
+    opacity: 0.75 !important;
+    animation: fadeIn 1.2s ease 1s both !important;
   }
 
-  .home-page .logo-ring       { width: 112px !important; height: 112px !important; }
-  .home-page .logo-ring-outer { width: 132px !important; height: 132px !important; }
+  .home-page .logo-ring       { width: 96px  !important; height: 96px  !important; }
+  .home-page .logo-ring-outer { width: 112px !important; height: 112px !important; }
 
   /* ── Trust builders — 2×2 grid mobile ── */
   .trust-builders {
