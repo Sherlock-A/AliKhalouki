@@ -1,9 +1,18 @@
 .home-page {
-  /* Logo positionné en haut à droite (pas centré) pour dégager le bouton */
   .logo-container {
     top: 6% !important;
     bottom: auto !important;
     margin: 0 !important;
+  }
+
+  @media (min-width: 769px) {
+    .logo-container {
+      display: none !important;
+    }
+
+    .flat-button {
+      display: none !important;
+    }
   }
 
   .text-zone {
