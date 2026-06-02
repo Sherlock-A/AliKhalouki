@@ -71,6 +71,12 @@
   will-change: filter;
 }
 
+@media (max-width: 768px) {
+  .logo-container {
+    display: none;
+  }
+}
+
 @keyframes ringRotate {
   to { transform: translateZ(0) rotate(360deg); }
 }
