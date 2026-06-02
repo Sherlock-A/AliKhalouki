@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './index.scss'
+
 import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import {
   faAward,
@@ -20,6 +20,8 @@ import { LANGS, useI18n } from '../../i18n'
 import { useTheme } from '../../theme'
 import AkMark from '../AkMark'
 import { FlagDE, FlagES, FlagFR, FlagGB } from '../AkMark/FlagIcon'
+
+import './index.scss'
 
 const FLAGS = { fr: FlagFR, en: FlagGB, es: FlagES, de: FlagDE }
 
