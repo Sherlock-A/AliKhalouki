@@ -17,6 +17,16 @@ import './index.scss'
 
 const projects = [
   {
+    title: 'Dunaria',
+    url: 'https://dunaria.vercel.app',
+    descKey: 'Guide de voyage désert du Sahara au Maroc — itinéraires privés, 12+ destinations, blog 55+ articles, PDF téléchargeable, intégration WhatsApp et support multilingue (ES/EN/FR).',
+    tags: ['Next.js', 'SEO', 'i18n', 'WhatsApp', 'Responsive', 'Multi-langue', 'Vercel'],
+    outcome: '500+ voyageurs · 4.9/5 ⭐ · 55+ articles · 3 langues',
+    sector: 'Tourisme / Voyage',
+    year: '2025',
+    badge: null,
+  },
+  {
     title: 'Portfolio Personnel',
     url: 'https://alikhalouki.vercel.app',
     descKey: "Portfolio interactif full-stack avec animations CSS/GSAP, thème clair/sombre, i18n 4 langues (FR/EN/ES/DE), formulaire EmailJS, carte Leaflet et déploiement CI/CD sur Vercel.",
