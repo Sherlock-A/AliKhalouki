@@ -1,12 +1,19 @@
 .projects-wrap {
   float: right;
   width: 53%;
-  height: 115%;
+  height: 100%;
   margin-top: -3%;
   display: flex;
   flex-direction: column;
   padding: 5% 20px 20px 10px;
   overflow-y: auto;
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(6, 182, 212, 0.35);
+    border-radius: 2px;
+  }
 }
 
 .project-grid {
