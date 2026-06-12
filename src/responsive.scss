@@ -549,6 +549,67 @@
     from { transform: scale(0) rotate(-15deg); opacity: 0; }
     to   { transform: scale(1) rotate(0deg);   opacity: 1; }
   }
+
+  /* ── Grilles projets + certs → 1 colonne ── */
+  .project-grid,
+  .cert-grid { grid-template-columns: 1fr !important; }
+
+  /* ── About — rings redimensionnés pour container 220px ── */
+  .about-page .photo-frame   { width: 166px !important; height: 166px !important; }
+  .about-page .photo-ring--1 { width: 188px !important; height: 188px !important; }
+  .about-page .photo-ring--2 { width: 210px !important; height: 210px !important; }
+
+  /* ── Process steps Services → vertical ── */
+  .process-steps {
+    flex-direction: column !important;
+    gap: 8px !important;
+    &::before { display: none !important; }
+  }
+  .process-step {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    .step-sub   { text-align: left !important; max-width: none !important; }
+    .step-label { text-align: left !important; }
+  }
+
+  /* ── Article Blog — polices ── */
+  .article-body {
+    padding: 0 0 20px !important;
+    h2  { font-size: 15px !important; margin-top: 16px !important; }
+    p   { font-size: 13px !important; }
+    li  { font-size: 12.5px !important; }
+    pre { padding: 10px !important; }
+    pre code { font-size: 11px !important; }
+  }
+
+  /* ── Hero CTAs — margins réduits ── */
+  .home-page .hero-ctas {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    gap: 8px !important;
+  }
+
+  /* ── Proficiency groups Skills ── */
+  .proficiency-label { min-width: 48px !important; font-size: 8px !important; }
+  .proficiency-tag   { font-size: 9px !important; padding: 1px 6px !important; }
+
+  /* ── Form success Contact — WA pleine largeur ── */
+  .form-success {
+    padding: 24px 14px !important;
+    .form-success-wa {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
+
+  /* ── Blog newsletter → colonne ── */
+  .blog-newsletter {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+    padding: 14px 12px !important;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -593,4 +654,33 @@
   /* Blog */
   .blog-card h2 { font-size: 15px !important; }
   .blog-card .blog-excerpt { font-size: 12px !important; }
+
+  /* ── Project cards ── */
+  .project-card {
+    padding: 14px !important;
+    h2 { font-size: 14px !important; }
+    p  { font-size: 11px !important; }
+    .project-outcome { font-size: 9px !important; }
+    .project-tag     { font-size: 9px !important; }
+  }
+
+  /* ── Cert cards ── */
+  .cert-card {
+    h2         { font-size: 15px !important; }
+    .cert-desc { font-size: 12px !important; }
+  }
+
+  /* ── Article body ── */
+  .article-body {
+    h2 { font-size: 14px !important; }
+    p  { font-size: 12.5px !important; }
+  }
+
+  /* ── Hero CTAs compacts ── */
+  .home-page .hero-ctas .flat-button,
+  .home-page .hero-ctas .hero-wa-btn {
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+    padding: 9px 12px !important;
+  }
 }
