@@ -236,6 +236,92 @@
   }
 }
 
+/* ── Thank You card ─────────────────────────────────────── */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 24px;
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 12px;
+  animation: fadeIn 0.4s ease;
+  gap: 12px;
+  margin-top: 16px;
+
+  .form-success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.12);
+    border: 2px solid rgba(37, 211, 102, 0.5);
+    color: #25D366;
+    font-size: 22px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-family: 'Coolvetica', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #25D366;
+    margin: 0;
+    letter-spacing: 0.06em;
+  }
+
+  p {
+    font-size: 13px !important;
+    color: #8a93a0 !important;
+    line-height: 1.6;
+    margin: 0 !important;
+    max-width: 320px;
+  }
+
+  .form-success-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: rgba(37, 211, 102, 0.12);
+    border: 1px solid rgba(37, 211, 102, 0.5);
+    border-radius: 6px;
+    color: #25D366;
+    font-size: 11px;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+
+    &:hover {
+      background: #25D366;
+      color: #000;
+    }
+  }
+
+  .form-success-reset {
+    background: transparent;
+    border: none;
+    color: #5b6470;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 4px 0;
+    transition: color 0.2s;
+
+    &:hover { color: #06B6D4; }
+  }
+}
+
 /* Carte inline mobile — cachée sur desktop */
 .map-mobile {
   display: none;

@@ -24,4 +24,12 @@ root.render(
   </React.StrictMode>
 )
 
-reportWebVitals()
+const vitalsCallback = ({ name, value, rating }) => {
+  if (process.env.NODE_ENV === 'production' && window.va) {
+    window.va('event', { name: `web_vital_${name}`, value: Math.round(value), rating })
+  } else if (process.env.NODE_ENV !== 'production') {
+    console.debug(`[Web Vital] ${name}:`, Math.round(value), `(${rating})`)
+  }
+}
+
+reportWebVitals(vitalsCallback)

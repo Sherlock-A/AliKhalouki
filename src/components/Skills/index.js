@@ -8,6 +8,24 @@ import AnimatedLetters from '../AnimatedLetters'
 import SEO from '../SEO'
 import './index.scss'
 
+const PROFICIENCY = [
+  {
+    level: 'Expert',
+    color: '#06B6D4',
+    skills: ['React', 'Next.js', 'Laravel', 'PHP', 'SCSS', 'Git', 'Docker'],
+  },
+  {
+    level: 'Confirmé',
+    color: '#2563EB',
+    skills: ['TypeScript', 'Node.js', 'MySQL', 'Linux', 'SEO'],
+  },
+  {
+    level: 'Notions',
+    color: '#5b6470',
+    skills: ['Three.js', 'Python', 'MongoDB', 'Vue'],
+  },
+]
+
 const Skills = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -36,6 +54,27 @@ const Skills = () => {
           </h1>
           <p>{t('skills.p1')}</p>
           <p>{t('skills.p2')}</p>
+
+          <div className="proficiency-groups">
+            {PROFICIENCY.map((group) => (
+              <div key={group.level} className="proficiency-row">
+                <span className="proficiency-label" style={{ color: group.color }}>
+                  {group.level}
+                </span>
+                <div className="proficiency-tags">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="proficiency-tag"
+                      style={{ borderColor: group.color, color: group.color }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="tagcloud-wrap">

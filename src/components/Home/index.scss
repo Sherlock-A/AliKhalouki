@@ -10,7 +10,7 @@
       display: none !important;
     }
 
-    .flat-button {
+    .hero-ctas {
       display: none !important;
     }
   }
@@ -180,6 +180,27 @@
     }
   }
 
+  .hero-value-prop {
+    font-family: 'Courier New', monospace;
+    font-size: 11px !important;
+    letter-spacing: 0.18em !important;
+    color: #06B6D4 !important;
+    text-transform: uppercase;
+    margin: 6px 0 0 !important;
+    opacity: 0;
+    animation: fadeIn 0.6s 1.2s forwards;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    margin-bottom: 60px;
+    animation: fadeInAnimation 1s 1.8s backwards;
+  }
+
   .flat-button {
     color: #06B6D4;
     font-size: 13px;
@@ -189,16 +210,26 @@
     text-decoration: none;
     padding: 10px 18px;
     border: 1px solid #06B6D4;
-    margin-top: 25px;
-    margin-bottom: 60px;
-    display: inline-block;
-    animation: fadeInAnimation 1s 1.8s backwards;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
     border-radius: 0.5rem;
 
     &:hover {
       background: #06B6D4;
       color: rgb(0, 0, 0);
+    }
+  }
+
+  .hero-wa-btn {
+    letter-spacing: 2px;
+    border-color: #25D366;
+    color: #25D366;
+
+    &:hover {
+      background: #25D366;
+      color: #000;
     }
   }
 }

@@ -180,6 +180,17 @@ const Blog = () => {
               ))}
             </div>
           )}
+
+          <div className="blog-newsletter">
+            <FontAwesomeIcon icon={faNewspaper} className="newsletter-icon" />
+            <p className="newsletter-text">Recevoir les prochains articles</p>
+            <a
+              href="mailto:okhalouki47@gmail.com?subject=Newsletter%20Blog"
+              className="newsletter-link"
+            >
+              S'abonner →
+            </a>
+          </div>
         </div>
       </div>
       <Loader type="pacman" />

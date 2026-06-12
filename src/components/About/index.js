@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import {
   faBolt,
+  faCircleCheck,
   faCommentDots,
   faLayerGroup,
   faShieldHalved,
@@ -15,7 +16,8 @@ import AnimatedLetters from '../AnimatedLetters'
 import SEO from '../SEO'
 import './index.scss'
 
-const ALI_PHOTO = process.env.PUBLIC_URL + '/ali-photo.png'
+const ALI_PHOTO_PNG  = process.env.PUBLIC_URL + '/ali-photo.png'
+const ALI_PHOTO_WEBP = process.env.PUBLIC_URL + '/ali-photo.webp'
 
 const FA_ICONS = {
   'layer-group': faLayerGroup,
@@ -26,17 +28,20 @@ const FA_ICONS = {
 
 const TESTIMONIALS = [
   {
-    name: 'Responsable Marketing, Cadex — Casablanca',
+    name: 'Responsable Marketing',
+    role: 'Cadex — Casablanca',
     text: 'Ali a livré notre site corporate en moins de 3 semaines. Score Lighthouse au-dessus de 90, et on a nettement amélioré notre visibilité en ligne dès le premier mois.',
     stars: 5,
   },
   {
-    name: 'Fondateur, Jobly.ma',
+    name: 'Fondateur',
+    role: 'Jobly.ma',
     text: 'Excellent travail sur la plateforme emploi. Code maintenable, livré dans les délais, et Ali est resté disponible après la livraison — rare chez un freelance.',
     stars: 5,
   },
   {
-    name: 'Gérant, Bait El Khalil',
+    name: 'Gérant',
+    role: 'Bait El Khalil',
     text: 'Site immobilier propre et rapide. On reçoit maintenant des demandes de contact directement via le formulaire. Je recommande sans hésiter.',
     stars: 5,
   },
@@ -89,9 +94,13 @@ const About = () => {
                   {Array.from({ length: t.stars }).map((_, s) => (
                     <FontAwesomeIcon key={s} icon={faStar} />
                   ))}
+                  <FontAwesomeIcon icon={faCircleCheck} className="testimonial-verified" />
                 </div>
                 <p className="testimonial-text">"{t.text}"</p>
-                <span className="testimonial-name">— {t.name}</span>
+                <div className="testimonial-author">
+                  <span className="testimonial-name">— {t.name}</span>
+                  <span className="testimonial-role">{t.role}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -104,13 +113,18 @@ const About = () => {
 
           <div className="photo-frame">
             <div className="photo-scan" />
-            <img
-              src={ALI_PHOTO}
-              alt="Ali Khalouki — Développeur Web Freelance à Fès, Maroc"
-              className="photo-img"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source srcSet={ALI_PHOTO_WEBP} type="image/webp" />
+              <img
+                src={ALI_PHOTO_PNG}
+                alt="Ali Khalouki — Développeur Web Freelance à Casablanca, Maroc"
+                className="photo-img"
+                width="210"
+                height="210"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="photo-meta">

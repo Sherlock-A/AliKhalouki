@@ -26,6 +26,7 @@ const Contact = () => {
   const form = useRef()
   const [loading, setLoading] = useState(false)
   const [formErrors, setFormErrors] = useState({})
+  const [sent, setSent] = useState(false)
 
   useEffect(() => {
     setTimeout(() => setLetterClass('text-animate-hover'), 3000)
@@ -99,10 +100,9 @@ const Contact = () => {
       )
       .then(
         () => {
-          toast.success('Message envoyé avec succès !', {
-            position: 'bottom-center', autoClose: 3500, theme: 'dark',
-          })
-          setTimeout(() => { form.current.reset(); setLoading(false) }, 3800)
+          setLoading(false)
+          setSent(true)
+          if (window.va) window.va('event', { name: 'contact_submit' })
         },
         (err) => {
           setLoading(false)
@@ -150,6 +150,29 @@ const Contact = () => {
             {t('contact.whatsappCta')}
           </a>
 
+          {sent ? (
+            <div className="form-success">
+              <span className="form-success-icon">✓</span>
+              <h3>{t('contact.successTitle') || 'Message envoyé !'}</h3>
+              <p>{t('contact.successMsg') || 'Je vous répondrai sous 24h. En attendant, vous pouvez me contacter directement sur WhatsApp.'}</p>
+              <a
+                href="https://wa.me/212771747509"
+                target="_blank"
+                rel="noreferrer"
+                className="flat-button form-success-wa"
+              >
+                <FontAwesomeIcon icon={faWhatsapp} />
+                {t('contact.successWa') || 'Discutons maintenant →'}
+              </a>
+              <button
+                type="button"
+                className="form-success-reset"
+                onClick={() => setSent(false)}
+              >
+                {t('contact.successReset') || 'Envoyer un autre message'}
+              </button>
+            </div>
+          ) : (
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
 
@@ -270,6 +293,7 @@ const Contact = () => {
               <ToastContainer />
             </form>
           </div>
+          )}
         </div>
 
         <div className="map-wrap">

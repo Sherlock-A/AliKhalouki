@@ -157,6 +157,43 @@
   .article-cta { color: #2563EB; border-color: #2563EB; &:hover { background: #2563EB; color: #fff; } }
 }
 
+.blog-newsletter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 8px;
+  background: rgba(6, 182, 212, 0.03);
+  margin-top: 20px;
+
+  .newsletter-icon {
+    color: #06B6D4;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .newsletter-text {
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    color: #8a93a0;
+    letter-spacing: 0.06em;
+    margin: 0;
+    flex: 1;
+  }
+
+  .newsletter-link {
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    color: #06B6D4;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    &:hover { opacity: 0.75; }
+  }
+}
+
 [data-theme="light"] .article-body {
   h2 { color: #2563EB; }
   h3 { color: #0E1116; }

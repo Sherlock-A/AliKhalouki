@@ -93,7 +93,7 @@
     0 0 18px rgba(6, 182, 212, 0.35),
     0 0 40px rgba(6, 182, 212, 0.12),
     inset 0 0 18px rgba(6, 182, 212, 0.06);
-  animation: photoFloat 4s ease-in-out infinite;
+  animation: photoFloat 8s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -111,7 +111,7 @@
   }
 }
 
-/* Scan line sweep */
+/* Scan line sweep — only on hover to save GPU */
 .photo-scan {
   position: absolute;
   top: -10%;
@@ -124,9 +124,14 @@
     rgba(6, 182, 212, 0.6),
     transparent
   );
-  animation: scanSweep 3s ease-in-out infinite;
+  animation: none;
   pointer-events: none;
   z-index: 2;
+  opacity: 0;
+}
+
+.photo-frame:hover .photo-scan {
+  animation: scanSweep 1.8s ease-in-out 1;
 }
 
 /* Name + location below photo */
@@ -213,10 +218,30 @@
     margin: 0 0 6px !important;
   }
 
+  .testimonial-verified {
+    color: #25D366;
+    font-size: 10px;
+    margin-left: 6px;
+    opacity: 0.85;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
   .testimonial-name {
     font-size: 10px;
     font-family: 'Courier New', monospace;
     color: #5b6470;
+    letter-spacing: 0.06em;
+  }
+
+  .testimonial-role {
+    font-size: 9px;
+    font-family: 'Courier New', monospace;
+    color: #3d4450;
     letter-spacing: 0.06em;
   }
 }

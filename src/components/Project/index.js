@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import {
   faArrowUpRightFromSquare,
   faFolder,
@@ -29,6 +29,7 @@ const projects = [
   {
     title: 'Portfolio Personnel',
     url: 'https://alikhalouki.vercel.app',
+    github: 'https://github.com/Sherlock-A/AliKhalouki',
     descKey: "Portfolio interactif full-stack avec animations CSS/GSAP, thème clair/sombre, i18n 4 langues (FR/EN/ES/DE), formulaire EmailJS, carte Leaflet et déploiement CI/CD sur Vercel.",
     tags: ['React', 'SCSS', 'EmailJS', 'Leaflet', 'FontAwesome', 'i18n', 'Vercel', 'GitHub Actions', 'React Router', 'Animate.css'],
     outcome: 'Score Lighthouse 95+ · i18n 4 langues · CI/CD automatisé',
@@ -203,15 +204,31 @@ const Project = () => {
                         <FontAwesomeIcon icon={faHammer} /> En cours
                       </span>
                     ) : (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="project-link"
-                        title={`Voir ${project.title}`}
-                      >
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                      </a>
+                      <>
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="project-link project-link--gh"
+                            title="Code source"
+                            aria-label="Code source GitHub"
+                          >
+                            <FontAwesomeIcon icon={faGithub} />
+                          </a>
+                        )}
+                        {project.url && (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="project-link"
+                            title={`Voir ${project.title}`}
+                          >
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                          </a>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>

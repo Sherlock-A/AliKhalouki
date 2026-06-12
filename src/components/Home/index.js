@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Loader from 'react-loaders'
 import { Link } from 'react-router-dom'
 
@@ -92,6 +94,7 @@ const Home = () => {
               idx={locationIdx}
             />
           </h1>
+          <p className="hero-value-prop">Full-Stack · SEO · DevOps — Casablanca</p>
           <h2>{t('home.subtitle')}</h2>
 
           <div className="home-stats">
@@ -126,9 +129,20 @@ const Home = () => {
             ))}
           </div>
 
-          <Link to="/contact" className="flat-button">
-            {t('home.cta')}
-          </Link>
+          <div className="hero-ctas">
+            <Link to="/contact" className="flat-button">
+              {t('home.cta')}
+            </Link>
+            <a
+              href="https://wa.me/212771747509"
+              target="_blank"
+              rel="noreferrer"
+              className="flat-button hero-wa-btn"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
+              WhatsApp
+            </a>
+          </div>
         </div>
         <Logo />
       </div>

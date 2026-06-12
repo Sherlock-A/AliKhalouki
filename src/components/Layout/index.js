@@ -4,12 +4,14 @@ import BackToTop from '../BackToTop'
 import ErrorBoundary from '../ErrorBoundary'
 import ScrollProgress from '../ScrollProgress'
 import Sidebar from '../Sidebar/'
+import StarsCanvas from '../StarsCanvas'
 import WhatsAppButton from '../WhatsAppButton'
 import './index.scss'
 
 const Layout = () => {
   return (
     <div className="App">
+      <StarsCanvas />
       <ScrollProgress />
       <Sidebar />
       <div className="page">
@@ -19,9 +21,6 @@ const Layout = () => {
           <Outlet />
         </ErrorBoundary>
         <span className="tags bottom-tags">
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
           &lt;/body&gt;
           <br />
           <span className="bottom-tag-html">&lt;/html&gt;</span>
