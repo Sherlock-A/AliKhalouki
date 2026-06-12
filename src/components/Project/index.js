@@ -29,7 +29,6 @@ const projects = [
   {
     title: 'Portfolio Personnel',
     url: 'https://alikhalouki.vercel.app',
-    github: 'https://github.com/Sherlock-A/AliKhalouki',
     descKey: "Portfolio interactif full-stack avec animations CSS/GSAP, thème clair/sombre, i18n 4 langues (FR/EN/ES/DE), formulaire EmailJS, carte Leaflet et déploiement CI/CD sur Vercel.",
     tags: ['React', 'SCSS', 'EmailJS', 'Leaflet', 'FontAwesome', 'i18n', 'Vercel', 'GitHub Actions', 'React Router', 'Animate.css'],
     outcome: 'Score Lighthouse 95+ · i18n 4 langues · CI/CD automatisé',
