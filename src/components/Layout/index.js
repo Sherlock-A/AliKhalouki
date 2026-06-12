@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 
+import usePageTracking from '../../hooks/usePageTracking'
 import BackToTop from '../BackToTop'
 import ErrorBoundary from '../ErrorBoundary'
 import ScrollProgress from '../ScrollProgress'
@@ -9,6 +10,8 @@ import WhatsAppButton from '../WhatsAppButton'
 import './index.scss'
 
 const Layout = () => {
+  usePageTracking()
+
   return (
     <div className="App">
       <StarsCanvas />

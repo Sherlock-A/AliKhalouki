@@ -8,6 +8,7 @@ import {
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReactGA from 'react-ga4'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import Loader from 'react-loaders'
 import { ClipLoader } from 'react-spinners'
@@ -103,6 +104,7 @@ const Contact = () => {
           setLoading(false)
           setSent(true)
           if (window.va) window.va('event', { name: 'contact_submit' })
+          if (process.env.REACT_APP_GA4_ID) ReactGA.event('contact_form_submit')
         },
         (err) => {
           setLoading(false)

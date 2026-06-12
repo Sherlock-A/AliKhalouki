@@ -2,12 +2,17 @@ import React from 'react'
 
 import { Analytics } from '@vercel/analytics/react'
 import ReactDOM from 'react-dom/client'
+import ReactGA from 'react-ga4'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
+
+if (process.env.REACT_APP_GA4_ID) {
+  ReactGA.initialize(process.env.REACT_APP_GA4_ID)
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

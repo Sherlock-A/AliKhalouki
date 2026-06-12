@@ -47,14 +47,14 @@ const Sidebar = () => {
         <NavLink activeclassname="active" className="about-link" to="/about" aria-label="À propos">
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
+        <NavLink activeclassname="active" className="skills-link" to="/skills" aria-label="Compétences">
+          <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
+        </NavLink>
         <NavLink activeclassname="active" className="services-link" to="/services" aria-label="Services">
           <FontAwesomeIcon icon={faBriefcase} color="#4d4d4e" />
         </NavLink>
         <NavLink activeclassname="active" className="projects-link" to="/projects" aria-label="Projets">
           <FontAwesomeIcon icon={faFolder} color="#4d4d4e" />
-        </NavLink>
-        <NavLink activeclassname="active" className="contact-link" to="/contact" aria-label="Contact">
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
 
         {/* Liens secondaires — masqués sur mobile, visibles sur desktop */}
@@ -64,8 +64,8 @@ const Sidebar = () => {
         <NavLink activeclassname="active" className="blog-link nav-secondary" to="/blog" aria-label="Blog">
           <FontAwesomeIcon icon={faNewspaper} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="skills-link nav-secondary" to="/skills" aria-label="Compétences">
-          <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
+        <NavLink activeclassname="active" className="contact-link nav-secondary" to="/contact" aria-label="Contact">
+          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
 
         {/* Bouton "Plus" — visible uniquement sur mobile */}
@@ -89,9 +89,9 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faNewspaper} />
             <span>Blog</span>
           </NavLink>
-          <NavLink activeclassname="active" className="skills-link" to="/skills" onClick={() => setMoreOpen(false)}>
-            <FontAwesomeIcon icon={faScrewdriverWrench} />
-            <span>Skills</span>
+          <NavLink activeclassname="active" className="contact-link" to="/contact" onClick={() => setMoreOpen(false)}>
+            <FontAwesomeIcon icon={faEnvelope} />
+            <span>Contact</span>
           </NavLink>
         </div>
       )}
