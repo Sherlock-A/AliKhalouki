@@ -1,4 +1,31 @@
 .container.blog-article-page {
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.06em;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-link {
+    color: #5b6470;
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover { color: #06B6D4; }
+  }
+
+  .breadcrumb-sep {
+    font-size: 8px;
+    color: #3a4350;
+  }
+
+  .breadcrumb-current {
+    color: #06B6D4;
+  }
+
   .back-link {
     display: inline-flex;
     align-items: center;

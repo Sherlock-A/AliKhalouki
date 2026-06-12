@@ -1,8 +1,20 @@
 $primary-color: #2563EB;
 
+@import './styles/variables';
 @import 'animate.css';
 @import '~loaders.css/src/animations/pacman.scss';
 @import './responsive';
+
+/* ── Theme transition ──────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
 @font-face {
   font-family: 'Helvetica Neue';
@@ -72,4 +84,19 @@ textarea {
   height: 50px;
   animation: fadeOut 1s 1s;
   animation-fill-mode: forwards;
+}
+
+/* ── Respect user motion preferences ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .avail-dot {
+    animation: none;
+  }
 }

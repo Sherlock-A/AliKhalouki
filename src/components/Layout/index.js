@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import BackToTop from '../BackToTop'
+import ErrorBoundary from '../ErrorBoundary'
 import ScrollProgress from '../ScrollProgress'
 import Sidebar from '../Sidebar/'
 import WhatsAppButton from '../WhatsAppButton'
@@ -14,7 +15,9 @@ const Layout = () => {
       <div className="page">
         <span className="tags top-tags">&lt;body&gt;</span>
 
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
         <span className="tags bottom-tags">
           <div id="stars"></div>
           <div id="stars2"></div>

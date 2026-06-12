@@ -25,33 +25,45 @@ const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
   const [loading, setLoading] = useState(false)
+  const [formErrors, setFormErrors] = useState({})
 
   useEffect(() => {
     setTimeout(() => setLetterClass('text-animate-hover'), 3000)
   }, [])
 
+  const verifyEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
+  }
+
+  const validate = (fields) => {
+    const errors = {}
+    if (!fields.name.trim()) errors.name = t('contact.errorName') || 'Nom requis'
+    if (!verifyEmail(fields.email)) errors.email = t('contact.errorEmail') || 'Email invalide'
+    if (!fields.subject.trim()) errors.subject = t('contact.errorSubject') || 'Sujet requis'
+    if (fields.message.trim().length < 20) errors.message = t('contact.errorMessage') || 'Message trop court (20 caractères min.)'
+    return errors
+  }
+
   const sendEmail = async (e) => {
     e.preventDefault()
     setLoading(true)
 
-    const email       = form.current.email.value
-    const res         = verifyEmail(email)
-
-    if (!res) {
-      setLoading(false)
-      toast.error('Adresse email invalide, veuillez vérifier.', {
-        position: 'bottom-center', autoClose: 3500, theme: 'dark',
-      })
-      return
-    }
-
     const fullName    = form.current.name.value
+    const email       = form.current.email.value
     const phone       = form.current.phone.value
     const projectType = form.current.projectType.value
     const budget      = form.current.budget.value
     const deadline    = form.current.deadline.value
     const subject     = form.current.subject.value
     const message     = form.current.message.value
+
+    const errors = validate({ name: fullName, email, subject, message })
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors)
+      setLoading(false)
+      return
+    }
+    setFormErrors({})
 
     const firstName   = fullName.split(' ')[0]
       .charAt(0).toUpperCase() + fullName.split(' ')[0].slice(1).toLowerCase()
@@ -80,7 +92,7 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.REACT_APP_EMIAL_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         templateParams,
         process.env.REACT_APP_PUBLIC_KEY
@@ -100,10 +112,6 @@ const Contact = () => {
           })
         }
       )
-  }
-
-  const verifyEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())
   }
 
   return (
@@ -149,11 +157,27 @@ const Contact = () => {
               <div className="form-row">
                 <div className="form-group">
                   <label>{t('contact.name')} *</label>
-                  <input type="text" name="name" required placeholder="Ali Khalouki" />
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Ali Khalouki"
+                    className={formErrors.name ? 'input-error' : ''}
+                    onChange={() => formErrors.name && setFormErrors(prev => ({ ...prev, name: '' }))}
+                  />
+                  {formErrors.name && <span className="field-error">{formErrors.name}</span>}
                 </div>
                 <div className="form-group">
                   <label>{t('contact.email')} *</label>
-                  <input type="email" name="email" required placeholder="ali@example.com" />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="ali@example.com"
+                    className={formErrors.email ? 'input-error' : ''}
+                    onChange={() => formErrors.email && setFormErrors(prev => ({ ...prev, email: '' }))}
+                  />
+                  {formErrors.email && <span className="field-error">{formErrors.email}</span>}
                 </div>
               </div>
 
@@ -199,7 +223,15 @@ const Contact = () => {
               {/* Row 4 — Sujet */}
               <div className="form-group full-width">
                 <label>{t('contact.subject')} *</label>
-                <input type="text" name="subject" required placeholder="Ex: Création site vitrine pour mon entreprise" />
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  placeholder="Ex: Création site vitrine pour mon entreprise"
+                  className={formErrors.subject ? 'input-error' : ''}
+                  onChange={() => formErrors.subject && setFormErrors(prev => ({ ...prev, subject: '' }))}
+                />
+                {formErrors.subject && <span className="field-error">{formErrors.subject}</span>}
               </div>
 
               {/* Row 5 — Message */}
@@ -209,7 +241,10 @@ const Contact = () => {
                   name="message"
                   required
                   placeholder="Décrivez votre projet en détail : fonctionnalités souhaitées, public cible, références visuelles..."
+                  className={formErrors.message ? 'input-error' : ''}
+                  onChange={() => formErrors.message && setFormErrors(prev => ({ ...prev, message: '' }))}
                 />
+                {formErrors.message && <span className="field-error">{formErrors.message}</span>}
               </div>
 
               {/* Submit */}

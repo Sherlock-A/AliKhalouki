@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Layout from './components/Layout'
+import NotFound from './components/NotFound'
 import TopControls from './components/TopControls'
 import { I18nProvider } from './i18n'
 import { ThemeProvider } from './theme'
@@ -36,6 +37,7 @@ function App() {
               <Route path="/blog/:slug" element={<BlogArticle />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/skills" element={<Skills />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </Suspense>

@@ -16,6 +16,39 @@
   }
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+}
+
+.filter-tag {
+  font-size: 10px;
+  font-family: 'Courier New', monospace;
+  color: #5b6470;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+
+  &:hover {
+    color: #06B6D4;
+    border-color: rgba(6, 182, 212, 0.4);
+  }
+
+  &--active {
+    color: #06B6D4;
+    border-color: #06B6D4;
+    background: rgba(6, 182, 212, 0.08);
+  }
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

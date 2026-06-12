@@ -1,0 +1,47 @@
+// ── Design Tokens ─────────────────────────────────────────────
+
+// Colors — brand
+$color-primary:    #06B6D4;  // cyan — accent principal
+$color-secondary:  #2563EB;  // bleu — liens hover, h1 hover
+$color-success:    #25D366;  // vert WhatsApp / disponibilité
+$color-error:      #ef4444;  // rouge — erreurs formulaire
+$color-warning:    #f59e0b;  // ambre — alertes
+
+// Colors — dark theme backgrounds
+$color-bg-dark:    #0E1116;
+$color-bg-card:    rgba(255, 255, 255, 0.04);
+$color-border:     rgba(255, 255, 255, 0.08);
+
+// Colors — text
+$color-text:       #e0e0e0;
+$color-text-muted: #5b6470;
+$color-text-dim:   #9aa3b0;
+$color-white:      #fff;
+
+// Colors — light theme overrides (referenced in light-theme.scss)
+$color-bg-light:   #f8fafc;
+$color-text-light: #1e293b;
+
+// Typography
+$font-coolvetica:  'Coolvetica', sans-serif;
+$font-aurore:      'La Belle Aurore', cursive;
+$font-helvetica:   'Helvetica Neue', sans-serif;
+$font-mono:        'Courier New', monospace;
+
+// Breakpoints
+$bp-desktop:  1100px;  // tablet / small desktop boundary
+$bp-mobile:    768px;  // desktop → mobile boundary
+$bp-small:     480px;  // small mobile
+
+// Spacing
+$sidebar-width:     60px;
+$sidebar-width-mob: 64px;
+
+// Transitions
+$transition-fast:   0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow:   0.5s ease;
+
+// Shadows / glows
+$glow-primary:  0 0 10px rgba(6, 182, 212, 0.4);
+$glow-success:  0 0 6px rgba(37, 211, 102, 0.6);

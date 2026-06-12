@@ -76,13 +76,25 @@ const CERTS = [
 
 const PAGE_SIZE = 4
 
+const ALL_CATEGORIES = ['Frontend', 'Backend', 'DevOps', 'Systèmes', 'Design']
+
 const Certificates = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
   const [page, setPage] = useState(0)
+  const [activeCategory, setActiveCategory] = useState(null)
 
-  const totalPages = Math.ceil(CERTS.length / PAGE_SIZE)
-  const visible = CERTS.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+  const filtered = activeCategory
+    ? CERTS.filter(c => c.category === activeCategory)
+    : CERTS
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+  const visible = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+
+  const handleCategory = (cat) => {
+    setActiveCategory(prev => prev === cat ? null : cat)
+    setPage(0)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2000)
@@ -112,10 +124,31 @@ const Certificates = () => {
         </div>
 
         <div className="certificates-wrap">
+          <div className="cert-filters">
+            {ALL_CATEGORIES.filter(cat => CERTS.some(c => c.category === cat)).map(cat => {
+              const color = CATEGORY_COLORS[cat] || '#06B6D4'
+              return (
+                <button
+                  key={cat}
+                  className={`cert-filter-btn${activeCategory === cat ? ' cert-filter-btn--active' : ''}`}
+                  style={activeCategory === cat
+                    ? { color, borderColor: color, background: `${color}15` }
+                    : { borderColor: `${color}40`, color: `${color}99` }
+                  }
+                  onClick={() => handleCategory(cat)}
+                  aria-pressed={activeCategory === cat}
+                >
+                  {cat}
+                </button>
+              )
+            })}
+          </div>
           <div className="cert-grid">
             {visible.map((cert, index) => {
               const color = CATEGORY_COLORS[cert.category] || '#06B6D4'
-              const globalIndex = page * PAGE_SIZE + index
+              const globalIndex = activeCategory
+                ? CERTS.findIndex(c => c === filtered[page * PAGE_SIZE + index])
+                : page * PAGE_SIZE + index
               return (
                 <div
                   key={globalIndex}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import {
   faArrowLeft,
+  faChevronRight,
   faClock,
   faTag,
 } from '@fortawesome/free-solid-svg-icons'
@@ -61,6 +62,13 @@ const Article = () => {
       />
       <div className="container blog-article-page">
         <div className="text-zone">
+          <nav className="breadcrumb" aria-label="Fil d'Ariane">
+            <Link to="/" className="breadcrumb-link">Ali Khalouki</Link>
+            <FontAwesomeIcon icon={faChevronRight} className="breadcrumb-sep" />
+            <Link to="/blog" className="breadcrumb-link">Blog</Link>
+            <FontAwesomeIcon icon={faChevronRight} className="breadcrumb-sep" />
+            <span className="breadcrumb-current">{meta.category}</span>
+          </nav>
           <Link to="/blog" className="back-link">
             <FontAwesomeIcon icon={faArrowLeft} /> Blog
           </Link>

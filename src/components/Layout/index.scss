@@ -198,3 +198,16 @@ html {
     transform: translateY(-2000px);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #stars,
+  #stars2,
+  #stars3 {
+    animation: none;
+  }
+
+  .container {
+    animation: none;
+    opacity: 1;
+  }
+}

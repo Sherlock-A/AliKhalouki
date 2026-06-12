@@ -41,30 +41,30 @@ const Sidebar = () => {
 
       <nav>
         {/* Liens primaires — toujours visibles */}
-        <NavLink exact="true" activeclassname="active" to="/">
+        <NavLink exact="true" activeclassname="active" to="/" aria-label="Accueil">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="about-link" to="/about">
+        <NavLink activeclassname="active" className="about-link" to="/about" aria-label="À propos">
           <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="services-link" to="/services">
+        <NavLink activeclassname="active" className="services-link" to="/services" aria-label="Services">
           <FontAwesomeIcon icon={faBriefcase} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="projects-link" to="/projects">
+        <NavLink activeclassname="active" className="projects-link" to="/projects" aria-label="Projets">
           <FontAwesomeIcon icon={faFolder} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="contact-link" to="/contact">
+        <NavLink activeclassname="active" className="contact-link" to="/contact" aria-label="Contact">
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
 
         {/* Liens secondaires — masqués sur mobile, visibles sur desktop */}
-        <NavLink activeclassname="active" className="certificates-link nav-secondary" to="/certificates">
+        <NavLink activeclassname="active" className="certificates-link nav-secondary" to="/certificates" aria-label="Certificats">
           <FontAwesomeIcon icon={faAward} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="blog-link nav-secondary" to="/blog">
+        <NavLink activeclassname="active" className="blog-link nav-secondary" to="/blog" aria-label="Blog">
           <FontAwesomeIcon icon={faNewspaper} color="#4d4d4e" />
         </NavLink>
-        <NavLink activeclassname="active" className="skills-link nav-secondary" to="/skills">
+        <NavLink activeclassname="active" className="skills-link nav-secondary" to="/skills" aria-label="Compétences">
           <FontAwesomeIcon icon={faScrewdriverWrench} color="#4d4d4e" />
         </NavLink>
 
@@ -98,22 +98,22 @@ const Sidebar = () => {
 
       <ul>
         <li className="mob-lang">
-          <button className="mob-lang-btn" onClick={() => changeLang(nextLang)} title={nextLang.toUpperCase()}>
+          <button className="mob-lang-btn" onClick={() => changeLang(nextLang)} aria-label={`Changer la langue : ${nextLang.toUpperCase()}`}>
             <ActiveFlag />
           </button>
         </li>
         <li>
-          <a href="https://wa.me/212771747509" target="_blank" rel="noreferrer" title="WhatsApp">
+          <a href="https://wa.me/212771747509" target="_blank" rel="noreferrer" aria-label="WhatsApp">
             <FontAwesomeIcon icon={faWhatsapp} color="#25D366" />
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/sherlock15_" target="_blank" rel="noreferrer" title="Instagram">
+          <a href="https://instagram.com/sherlock15_" target="_blank" rel="noreferrer" aria-label="Instagram">
             <FontAwesomeIcon icon={faInstagram} color="#E1306C" />
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/ali-khalouki-114975253/" target="_blank" rel="noreferrer" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/ali-khalouki-114975253/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FontAwesomeIcon icon={faLinkedin} color="#b9b9b9" />
           </a>
         </li>

@@ -110,13 +110,26 @@ const projects = [
 
 const PAGE_SIZE = 4
 
+// Popular tags to show as quick filters (curated subset)
+const FILTER_TAGS = ['React', 'Next.js', 'Laravel', 'WordPress', 'TypeScript', 'Python', 'SEO']
+
 const Project = () => {
   const { t } = useI18n()
   const [letterClass, setLetterClass] = useState('text-animate')
   const [page, setPage] = useState(0)
+  const [activeFilter, setActiveFilter] = useState(null)
 
-  const totalPages = Math.ceil(projects.length / PAGE_SIZE)
-  const visible = projects.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+  const filtered = activeFilter
+    ? projects.filter(p => p.tags.includes(activeFilter))
+    : projects
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+  const visible = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+
+  const handleFilter = (tag) => {
+    setActiveFilter(prev => prev === tag ? null : tag)
+    setPage(0)
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => setLetterClass('text-animate-hover'), 2000)
@@ -142,6 +155,18 @@ const Project = () => {
           <p>{t('projects.intro')}</p>
         </div>
         <div className="projects-wrap">
+          <div className="project-filters">
+            {FILTER_TAGS.map(tag => (
+              <button
+                key={tag}
+                className={`filter-tag${activeFilter === tag ? ' filter-tag--active' : ''}`}
+                onClick={() => handleFilter(tag)}
+                aria-pressed={activeFilter === tag}
+              >
+                #{tag}
+              </button>
+            ))}
+          </div>
           <div className="project-grid">
             {visible.map((project, index) => (
               <div

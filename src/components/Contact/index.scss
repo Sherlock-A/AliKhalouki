@@ -189,6 +189,20 @@
     }
   }
 
+  .field-error {
+    font-size: 10px;
+    color: #ef4444;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .input-error {
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    background: rgba(239, 68, 68, 0.04) !important;
+  }
+
   .form-submit {
     display: flex;
     justify-content: flex-end;
